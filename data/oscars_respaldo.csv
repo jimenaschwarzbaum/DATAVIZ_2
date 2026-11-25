@@ -1,0 +1,622 @@
+year_film,film_month,film_day,year_ceremony,ceremony,name,film,nacionalidad,donde se grabo,genero,tema,duracion,winner
+1927,Enero,6,1928,1,The Caddo Company,The Racket,,,"Crime, Drama, Film-Noir",NOIR,84,FALSE
+1927,Mayo,6,1928,1,Fox,7th Heaven,,,"Drama, Romance",WAR,110,FALSE
+1927,Agosto,12,1928,1,Paramount Famous Lasky,Wings,,,"Drama, Romance, War",WAR,144,TRUE
+1928,Abril,20,1929,2,Feature Productions,Alibi,,,"Action, Crime, Romance",,91,FALSE
+1928,Diciembre,25,1929,2,Fox,In Old Arizona,,,Western,WESTERN,95,FALSE
+1928,Febrero,1,1929,2,Metro-Goldwyn-Mayer,The Broadway Melody,,,"Drama, Musical, Romance",MUSICAL,100,TRUE
+1928,Junio,20,1929,2,Metro-Goldwyn-Mayer,Hollywood Revue,,,"Comedy, Music",,130,FALSE
+1928,Agosto,17,1929,2,Paramount Famous Lasky,The Patriot,,,"Drama, History, Thriller",,113,FALSE
+1929,Octubre,7,1930,3,Universal,All Quiet on the Western Front,,,"Drama, War",WAR,152,TRUE
+1929,Junio,24,1930,3,Cosmopolitan,The Big House,,,"Crime, Drama, Thriller",,87,FALSE
+1929,Octubre,2,1930,3,Warner Bros.,Disraeli,,,"Biography, Drama, History",BIOPIC,90,FALSE
+1929,Abril,19,1930,3,Metro-Goldwyn-Mayer,The Divorcee,,,"Romance, Drama",,84,FALSE
+1929,Noviembre,19,1930,3,Paramount Famous Lasky,The Love Parade,,,"Comedy, Musical, Romance",MUSICAL,107,FALSE
+1930,Enero,26,1931,4,RKO Radio,Cimarron,,,"Drama, Western",WESTERN,123,TRUE
+1930,Febrero,21,1931,4,Fox,East Lynne,,,"Drama, Romance",,102,FALSE
+1930,Marzo,19,1931,4,The Caddo Company,The Front Page,,,"Comedy, Crime, Drama",,101,FALSE
+1930,Abril,2,1931,4,Paramount Publix,Skippy,,,"Comedy, Drama, Family",,85,FALSE
+1930,Mayo,23,1931,4,Metro-Goldwyn-Mayer,Trader Horn,,,"Action, Adventure, Drama",,122,FALSE
+1931,Diciembre,26,1932,5,Samuel Goldwyn Productions,Arrowsmith,,,Drama,,108,FALSE
+1931,Agosto,13,1932,5,Fox,Bad Girl,,,"Drama, Romance",,90,FALSE
+1931,Noviembre,9,1932,5,Metro-Goldwyn-Mayer,The Champ,,,"Drama, Sport",SPORT,86,FALSE
+1931,Septiembre,10,1932,5,First National,Five Star Final,,,"Crime, Drama",,89,FALSE
+1931,Abril,12,1932,5,Metro-Goldwyn-Mayer,Grand Hotel,,,"Drama, Romance",,112,TRUE
+1931,Marzo,22,1932,5,Paramount Publix,One Hour with You,,,"Comedy, Musical, Romance",MUSICAL,78,FALSE
+1931,Febrero,2,1932,5,Paramount Publix,Shanghai Express,,,"Adventure, Drama, Romance",,82,FALSE
+1931,Julio,10,1932,5,Paramount Publix,The Smiling Lieutenant,,,"Comedy, Romance, Musical",MUSICAL,93,FALSE
+1932,Enero,5,1933,6,Fox,Cavalcade,,,"Drama, Romance, War",WAR,112,TRUE
+1932,Diciembre,8,1933,6,Paramount,A Farewell to Arms,,,"Drama, Romance, War",WAR,80,FALSE
+1932,Marzo,8,1933,6,Warner Bros.,42nd Street,,,"Comedy, Drama, Musical",MUSICAL,89,FALSE
+1932,Noviembre,10,1933,6,Warner Bros.,I Am a Fugitive from a Chain Gang,,,"Crime, Drama, Film-Noir",NOIR,92,FALSE
+1932,Septiembre,7,1933,6,Columbia,Lady for a Day,,,"Comedy, Drama",,96,FALSE
+1932,Diciembre,25,1933,6,RKO Radio,Little Women,,,"Drama, Family, Romance",,115,FALSE
+1932,Agosto,17,1933,6,London Films,The Private Life of Henry VIII,,,"Biography, Comedy, Drama",BIOPIC,97,FALSE
+1932,Enero,27,1933,6,Paramount,She Done Him Wrong,,,"Comedy, Drama, History",,66,FALSE
+1932,Septiembre,24,1933,6,Metro-Goldwyn-Mayer,Smilin' Through,,,"Drama, Romance",,98,FALSE
+1932,Enero,26,1933,6,Fox,State Fair,,,"Comedy, Drama, Romance",,99,FALSE
+1934,Septiembre,21,1935,7,Metro-Goldwyn-Mayer,The Barretts of Wimpole Street,,,"Biography, Drama, Romance",BIOPIC,109,FALSE
+1934,Octubre,5,1935,7,Paramount,Cleopatra,,,"Biography, Drama, History",BIOPIC,100,FALSE
+1934,Noviembre,28,1935,7,First National,Flirtation Walk,,,"Musical, Romance",MUSICAL,97,FALSE
+1934,Octubre,12,1935,7,RKO Radio,The Gay Divorcee,,,"Comedy, Musical, Romance",MUSICAL,107,FALSE
+1934,Julio,21,1935,7,Warner Bros.,Here Comes the Navy,,,"Comedy, Drama, Romance",,87,FALSE
+1934,Abril,7,1935,7,20th Century,The House of Rothschild,,,"Biography, Drama, History",BIOPIC,88,FALSE
+1934,Noviembre,26,1935,7,Universal,Imitation of Life,,,"Drama, Romance",,111,FALSE
+1934,Febrero,22,1935,7,Columbia,It Happened One Night,,,"Comedy, Romance",ROMCOM,105,TRUE
+1934,Septiembre,5,1935,7,Columbia,One Night of Love,,,"Music, Romance",,84,FALSE
+1934,Mayo,25,1935,7,Metro-Goldwyn-Mayer,The Thin Man,,,"Comedy, Crime, Mystery",,91,FALSE
+1934,Abril,10,1935,7,Metro-Goldwyn-Mayer,Viva Villa!,,,"Action, Biography, Romance",,115,FALSE
+1934,Noviembre,16,1935,7,Jesse L. Lasky (production company),The White Parade,,,Drama,DRAMA,80,FALSE
+1935,Agosto,15,1936,8,RKO Radio,Alice Adams,,,"Comedy, Drama, Romance",,99,FALSE
+1935,Agosto,25,1936,8,Metro-Goldwyn-Mayer,Broadway Melody of 1936,,,"Musical, Romance",MUSICAL,101,FALSE
+1935,Diciembre,28,1936,8,Cosmopolitan,Captain Blood,,,"Action, Adventure, History",,119,FALSE
+1935,Enero,18,1936,8,Metro-Goldwyn-Mayer,David Copperfield,,,"Adventure, Drama, Romance",,130,FALSE
+1935,Mayo,1,1936,8,RKO Radio,The Informer,,,"Crime, Drama",,91,FALSE
+1935,Abril,21,1936,8,20th Century,Les Miserables,,,"Drama, History, Romance",,108,FALSE
+1935,Enero,11,1936,8,Paramount,The Lives of a Bengal Lancer,,,"Adventure, Drama, War",WAR,109,FALSE
+1935,Octubre,9,1936,8,Warner Bros.,A Midsummer Night's Dream,,,"Comedy, Fantasy, Romance",,133,FALSE
+1935,Noviembre,8,1936,8,Metro-Goldwyn-Mayer,Mutiny on the Bounty,,,"Adventure, Biography, Drama",BIOPIC,132,TRUE
+1935,Marzo,22,1936,8,Metro-Goldwyn-Mayer,Naughty Marietta,,,"Drama, Musical, Romance",,105,FALSE
+1935,Marzo,8,1936,8,Paramount,Ruggles of Red Gap,,,"Comedy, Romance, Western",,90,FALSE
+1935,Agosto,30,1936,8,RKO Radio,Top Hat,,,"Comedy, Musical, Romance",MUSICAL,101,FALSE
+1936,Agosto,29,1937,9,Warner Bros.,Anthony Adverse,,,"Adventure, Drama, Romance",,141,FALSE
+1936,Septiembre,23,1937,9,Samuel Goldwyn Productions,Dodsworth,,,"Drama, Romance",,101,FALSE
+1936,Marzo,22,1937,9,Metro-Goldwyn-Mayer,The Great Ziegfeld,,,"Biography, Drama, Musical",,176,TRUE
+1936,Octubre,9,1937,9,Metro-Goldwyn-Mayer,Libeled Lady,,,"Comedy, Romance",ROMCOM,98,FALSE
+1936,Abril,12,1937,9,Columbia,Mr. Deeds Goes to Town,,,"Comedy, Drama, Romance",,115,FALSE
+1936,Agosto,20,1937,9,Metro-Goldwyn-Mayer,Romeo and Juliet,,,"Drama, Romance",DRAMA,125,FALSE
+1936,Junio,26,1937,9,Metro-Goldwyn-Mayer,San Francisco,,,"Drama, Musical, Romance",,115,FALSE
+1936,Febrero,22,1937,9,Cosmopolitan,The Story of Louis Pasteur,,,"Biography, Drama, History",BIOPIC,86,FALSE
+1936,Diciembre,25,1937,9,Metro-Goldwyn-Mayer,A Tale of Two Cities,,,"Drama, History, Romance",,128,FALSE
+1936,Diciembre,20,1937,9,Universal,Three Smart Girls,,,"Comedy, Musical, Romance",MUSICAL,84,FALSE
+1937,Octubre,21,1938,10,Columbia,The Awful Truth,,,"Comedy, Romance",ROMCOM,90,FALSE
+1937,Mayo,11,1938,10,Metro-Goldwyn-Mayer,Captains Courageous,,,"Adventure, Drama, Family",,117,FALSE
+1937,Agosto,24,1938,10,Samuel Goldwyn Productions,Dead End,,,"Crime, Drama, Film-Noir",NOIR,93,FALSE
+1937,Enero,29,1938,10,Metro-Goldwyn-Mayer,The Good Earth,,,"Drama, Romance",,138,FALSE
+1937,Enero,6,1938,10,20th Century-Fox,In Old Chicago,,,"Action, Drama, Musical",MUSICAL,95,FALSE
+1937,Agosto,11,1938,10,Warner Bros.,The Life of Emile Zola,,,"Biography, Drama",BIOPIC,116,TRUE
+1937,Marzo,3,1938,10,Columbia,Lost Horizon,,,"Adventure, Drama, Fantasy",,132,FALSE
+1937,Septiembre,11,1938,10,Universal,One Hundred Men and a Girl,,,"Comedy, Drama, Music",,84,FALSE
+1937,Octubre,8,1938,10,RKO Radio,Stage Door,,,"Comedy, Drama",,92,FALSE
+1937,Abril,27,1938,10,Selznick International Pictures,A Star Is Born,,,"Drama, Romance",DRAMA,111,FALSE
+1938,Mayo,14,1939,11,Warner Bros.-First National,The Adventures of Robin Hood,,,"Action, Adventure, Romance",,102,FALSE
+1938,Agosto,16,1939,11,20th Century-Fox,Alexander's Ragtime Band,,,"Drama, Music, Musical",,106,FALSE
+1938,Septiembre,8,1939,11,Metro-Goldwyn-Mayer,Boys Town,,,"Biography, Drama",BIOPIC,96,FALSE
+1938,Noviembre,3,1939,11,Metro-Goldwyn-Mayer,The Citadel,,,Drama,DRAMA,110,FALSE
+1938,Agosto,9,1939,11,Warner Bros.-First National,Four Daughters,,,"Drama, Music, Romance",,90,FALSE
+1938,Junio,8,1939,11,Realization D'Art Cinematographique,Grand Illusion,,,"Drama, War",WAR,113,FALSE
+1938,Marzo,10,1939,11,Warner Bros.,Jezebel,,,"Drama, Romance",,104,FALSE
+1938,Octubre,6,1939,11,Metro-Goldwyn-Mayer,Pygmalion,,,"Comedy, Drama, Romance",,89,FALSE
+1938,Abril,16,1939,11,Metro-Goldwyn-Mayer,Test Pilot,,,"Drama, Romance",,119,FALSE
+1938,Septiembre,1,1939,11,Columbia,You Can't Take It with You,,,"Comedy, Drama, Romance",,126,TRUE
+1939,Abril,20,1940,12,Warner Bros.-First National,Dark Victory,,,"Drama, Romance",DRAMA,104,FALSE
+1939,Diciembre,15,1940,12,Selznick International Pictures,Gone with the Wind,,,"Drama, History, Romance",,238,TRUE
+1939,Mayo,15,1940,12,Metro-Goldwyn-Mayer,"Goodbye, Mr. Chips",,,"Drama, Romance",,114,FALSE
+1939,Marzo,16,1940,12,RKO Radio,Love Affair,,,"Comedy, Drama, Romance",,88,FALSE
+1939,Octubre,19,1940,12,Columbia,Mr. Smith Goes to Washington,,,"Comedy, Drama",,129,FALSE
+1939,Octubre,6,1940,12,Metro-Goldwyn-Mayer,Ninotchka,,,"Comedy, Romance",ROMCOM,110,FALSE
+1939,Diciembre,22,1940,12,Hal Roach (production company),Of Mice and Men,,,"Adventure, Drama",,106,FALSE
+1939,Marzo,2,1940,12,Walter Wanger (production company),Stagecoach,,,"Adventure, Drama, Western",WESTERN,96,FALSE
+1939,Agosto,25,1940,12,Metro-Goldwyn-Mayer,The Wizard of Oz,,,"Adventure, Family, Fantasy",,102,FALSE
+1939,Abril,13,1940,12,Samuel Goldwyn Productions,Wuthering Heights,,,"Drama, Romance",,104,FALSE
+1940,Julio,4,1941,13,Warner Bros.,"All This, and Heaven Too",,,"Drama, Romance",,141,FALSE
+1940,Agosto,16,1941,13,Walter Wanger (production company),Foreign Correspondent,,,"Action, Romance, Thriller",,120,FALSE
+1940,Enero,24,1941,13,20th Century-Fox,The Grapes of Wrath,,,"Drama, History",,129,FALSE
+1940,Octubre,15,1941,13,Charles Chaplin Productions,The Great Dictator,,,"Comedy, Drama, War",,125,FALSE
+1940,Diciembre,27,1941,13,RKO Radio,Kitty Foyle,,,"Drama, Romance",,108,FALSE
+1940,Noviembre,22,1941,13,Warner Bros.,The Letter,,,"Crime, Drama, Film-Noir",NOIR,95,FALSE
+1940,Octubre,8,1941,13,Argosy-Wanger,The Long Voyage Home,,,"Drama, War",,105,FALSE
+1940,Mayo,24,1941,13,Sol Lesser (production company),Our Town,,,"Drama, Romance",,90,FALSE
+1940,Diciembre,26,1941,13,Metro-Goldwyn-Mayer,The Philadelphia Story,,,"Comedy, Romance",ROMCOM,112,FALSE
+1940,Abril,12,1941,13,Selznick International Pictures,Rebecca,,,"Drama, Mystery, Romance",,130,TRUE
+1941,Julio,25,1942,14,Metro-Goldwyn-Mayer,Blossoms in the Dust,,,"Biography, Drama, Romance",,99,FALSE
+1941,Mayo,1,1942,14,Mercury,Citizen Kane,,,"Drama, Mystery",,119,FALSE
+1941,Agosto,7,1942,14,Columbia,Here Comes Mr. Jordan,,,"Comedy, Fantasy, Romance",,94,FALSE
+1941,Septiembre,26,1942,14,Paramount,Hold Back the Dawn,,,"Drama, Romance",,116,FALSE
+1941,Octubre,28,1942,14,20th Century-Fox,How Green Was My Valley,,,"Drama, Family",,118,TRUE
+1941,Agosto,21,1942,14,Samuel Goldwyn Productions,The Little Foxes,,,"Drama, Romance",,116,FALSE
+1941,Octubre,3,1942,14,Warner Bros.,The Maltese Falcon,,,"Crime, Film-Noir, Mystery",,100,FALSE
+1941,Octubre,2,1942,14,Warner Bros.,One Foot in Heaven,,,"Biography, Drama",,108,FALSE
+1941,Julio,2,1942,14,Warner Bros.,Sergeant York,,,"Biography, Drama, History",,134,FALSE
+1941,Noviembre,14,1942,14,RKO Radio,Suspicion,,,"Film-Noir, Mystery, Thriller",,99,FALSE
+1942,Marzo,5,1943,15,Ortus,The Invaders,,,"Drama, Thriller, War",,123,FALSE
+1942,Febrero,2,1943,15,Warner Bros.,Kings Row,,,"Drama, Mystery, Romance",,127,FALSE
+1942,Julio,10,1943,15,Mercury,The Magnificent Ambersons,,,"Drama, Romance",,88,FALSE
+1942,Junio,4,1943,15,Metro-Goldwyn-Mayer,Mrs. Miniver,,,"Drama, Romance, War",,134,TRUE
+1942,Agosto,28,1943,15,20th Century-Fox,The Pied Piper,,,"Drama, War",,87,FALSE
+1942,Julio,14,1943,15,Samuel Goldwyn Productions,The Pride of the Yankees,,,"Biography, Drama, Romance",,128,FALSE
+1942,Diciembre,17,1943,15,Metro-Goldwyn-Mayer,Random Harvest,,,"Adventure, Drama, Family",,126,FALSE
+1942,Agosto,20,1943,15,Columbia,The Talk of the Town,,,"Comedy, Drama, Romance",,118,FALSE
+1942,Agosto,11,1943,15,Paramount,Wake Island,,,"Action, Drama, War",,88,FALSE
+1942,Junio,6,1943,15,Warner Bros.,Yankee Doodle Dandy,,,"Biography, Drama, Music",,126,FALSE
+1943,Enero,23,1944,16,Warner Bros.,Casablanca,,,"Drama, Romance, War",,102,TRUE
+1943,Julio,14,1944,16,Paramount,For Whom the Bell Tolls,,,"Adventure, Drama, History",,170,FALSE
+1943,Agosto,11,1944,16,20th Century-Fox,Heaven Can Wait,,,"Comedy, Drama, Fantasy",,112,FALSE
+1943,Marzo,2,1944,16,Metro-Goldwyn-Mayer,The Human Comedy,,,"Comedy, Drama, Family",,117,FALSE
+1943,Septiembre,17,1944,16,Two Cities,In Which We Serve,,,"Drama, War",,115,FALSE
+1943,Diciembre,15,1944,16,Metro-Goldwyn-Mayer,Madame Curie,,,"Biography, Drama, Romance",,124,FALSE
+1943,Mayo,13,1944,16,Columbia,The More the Merrier,,,"Comedy, Romance, War",,104,FALSE
+1943,Mayo,21,1944,16,20th Century-Fox,The Ox-Bow Incident,,,"Adventure, Drama, Western",,75,FALSE
+1943,Diciembre,21,1944,16,20th Century-Fox,The Song of Bernadette,,,"Biography, Drama",,156,FALSE
+1943,Agosto,27,1944,16,Warner Bros.,Watch on the Rhine,,,"Drama, Thriller",,114,FALSE
+1944,Julio,3,1945,17,Paramount,Double Indemnity,,,"Crime, Drama, Film-Noir",,107,FALSE
+1944,Mayo,4,1945,17,Metro-Goldwyn-Mayer,Gaslight,,,"Crime, Drama, Mystery",,114,FALSE
+1944,Mayo,3,1945,17,Paramount,Going My Way,,,"Comedy, Drama, Music",,126,TRUE
+1944,Julio,20,1945,17,Selznick International Pictures,Since You Went Away,,,"Drama, Romance, War",,177,FALSE
+1944,Agosto,1,1945,17,20th Century-Fox,Wilson,,,"Biography, Drama, History",,154,FALSE
+1945,Julio,19,1946,18,Metro-Goldwyn-Mayer,Anchors Aweigh,,,"Comedy, Fantasy, Music",,140,FALSE
+1945,Diciembre,6,1946,18,Rainbow Productions,The Bells of St. Mary's,,,Drama,,126,FALSE
+1945,Noviembre,29,1946,18,Paramount,The Lost Weekend,,,"Drama, Film-Noir",,101,TRUE
+1945,Septiembre,28,1946,18,Warner Bros.,Mildred Pierce,,,"Crime, Drama, Film-Noir",,111,FALSE
+1945,Octubre,31,1946,18,Selznick International Pictures,Spellbound,,,"Film-Noir, Mystery, Romance",,111,FALSE
+1946,Noviembre,21,1947,19,Samuel Goldwyn Productions,The Best Years of Our Lives,,,"Drama, Romance, War",,170,TRUE
+1946,Abril,19,1947,19,J. Arthur Rank-Two Cities Films,Henry V,,,"Biography, Drama, History",,137,FALSE
+1946,Diciembre,20,1947,19,Liberty Films,It's a Wonderful Life,,,"Drama, Family, Fantasy",,130,FALSE
+1946,Noviembre,19,1947,19,20th Century-Fox,The Razor's Edge,,,"Drama, Romance",,145,FALSE
+1946,Diciembre,18,1947,19,Metro-Goldwyn-Mayer,The Yearling,,,"Drama, Family, Western",,128,FALSE
+1947,Diciembre,9,1948,20,Samuel Goldwyn Productions,The Bishop's Wife,,,"Comedy, Drama, Fantasy",,109,FALSE
+1947,Julio,22,1948,20,RKO Radio,Crossfire,,,"Crime, Drama, Film-Noir",,86,FALSE
+1947,Noviembre,11,1948,20,20th Century-Fox,Gentleman's Agreement,,,"Drama, Romance",,118,TRUE
+1947,Abril,29,1948,20,J. Arthur Rank-Cineguild,Great Expectations,,,"Adventure, Drama, Mystery",,118,FALSE
+1947,Junio,4,1948,20,20th Century-Fox,Miracle on 34th Street,,,"Comedy, Drama, Family",,96,FALSE
+1948,Mayo,4,1949,21,J. Arthur Rank-Two Cities Films,Hamlet,,,Drama,,154,TRUE
+1948,Septiembre,14,1949,21,Warner Bros.,Johnny Belinda,,,Drama,,102,FALSE
+1948,Septiembre,6,1949,21,J. Arthur Rank-Archers,The Red Shoes,,,"Drama, Music, Romance",,135,FALSE
+1948,Noviembre,4,1949,21,20th Century-Fox,The Snake Pit,,,"Drama, Mystery",,108,FALSE
+1948,Enero,24,1949,21,Warner Bros.,The Treasure of the Sierra Madre,,,"Adventure, Drama, Western",,126,FALSE
+1949,Noviembre,8,1950,22,Robert Rossen Productions,All the King's Men,,,"Drama, Film-Noir",,110,TRUE
+1949,Noviembre,9,1950,22,Metro-Goldwyn-Mayer,Battleground,,,"Action, Drama, History",,118,FALSE
+1949,Octubre,6,1950,22,Paramount,The Heiress,,,"Drama, Romance",,115,FALSE
+1949,Enero,20,1950,22,20th Century-Fox,A Letter to Three Wives,,,"Drama, Romance",,103,FALSE
+1949,Diciembre,21,1950,22,20th Century-Fox,Twelve O'Clock High,,,"Drama, War",,132,FALSE
+1950,Octubre,13,1951,23,20th Century-Fox,All about Eve,,,Drama,,138,TRUE
+1950,Diciembre,25,1951,23,Columbia,Born Yesterday,,,"Comedy, Drama, Romance",,103,FALSE
+1950,Junio,16,1951,23,Metro-Goldwyn-Mayer,Father of the Bride,,,"Comedy, Romance",,92,FALSE
+1950,Noviembre,24,1951,23,Metro-Goldwyn-Mayer,King Solomon's Mines,,,"Action, Adventure, Romance",,103,FALSE
+1950,Agosto,10,1951,23,Paramount,Sunset Blvd.,,,"Drama, Film-Noir",,110,FALSE
+1951,Noviembre,11,1952,24,"Arthur Freed, Producer",An American in Paris,,,"Drama, Musical, Romance",,114,TRUE
+1951,Diciembre,21,1952,24,"Anatole Litvak and Frank McCarthy, Producers",Decision before Dawn,,,"Drama, War",,119,FALSE
+1951,Agosto,14,1952,24,"George Stevens, Producer",A Place in the Sun,,,"Drama, Romance",,122,FALSE
+1951,Noviembre,8,1952,24,"Sam Zimbalist, Producer",Quo Vadis,,,"Biography, Drama, History",,171,FALSE
+1951,Septiembre,18,1952,24,"Charles K. Feldman, Producer",A Streetcar Named Desire,,,Drama,,122,FALSE
+1952,Enero,10,1953,25,"Cecil B. DeMille, Producer",The Greatest Show on Earth,,,"Drama, Family, Romance",,152,TRUE
+1952,Julio,24,1953,25,"Stanley Kramer, Producer",High Noon,,,"Drama, Thriller, Western",,85,FALSE
+1952,Julio,31,1953,25,"Pandro S. Berman, Producer",Ivanhoe,,,"Adventure, Drama, History",,106,FALSE
+1952,Diciembre,23,1953,25,Romulus Films,Moulin Rouge,,,"Biography, Drama, Music",,119,FALSE
+1952,Septiembre,14,1953,25,"John Ford and Merian C. Cooper, Producers",The Quiet Man,,,"Comedy, Drama, Romance",,129,FALSE
+1953,Agosto,5,1954,26,"Buddy Adler, Producer",From Here to Eternity,,,"Drama, Romance, War",,118,TRUE
+1953,Junio,4,1954,26,"John Houseman, Producer",Julius Caesar,,,"Biography, Drama, History",,120,FALSE
+1953,Septiembre,16,1954,26,"Frank Ross, Producer",The Robe,,,"Drama, History",,135,FALSE
+1953,Agosto,27,1954,26,"William Wyler, Producer",Roman Holiday,,,"Comedy, Romance",,118,FALSE
+1953,Abril,23,1954,26,"George Stevens, Producer",Shane,,,"Drama, Western",,118,FALSE
+1954,Junio,24,1955,27,"Stanley Kramer, Producer",The Caine Mutiny,,,"Drama, War",,124,FALSE
+1954,Diciembre,15,1955,27,"William Perlberg, Producer",The Country Girl,,,"Drama, Music",,104,FALSE
+1954,Junio,22,1955,27,"Sam Spiegel, Producer",On the Waterfront,,,"Crime, Drama, Thriller",,108,TRUE
+1954,Julio,22,1955,27,"Jack Cummings, Producer",Seven Brides for Seven Brothers,,,"Comedy, Drama, Musical",,102,FALSE
+1954,Mayo,20,1955,27,"Sol C. Siegel, Producer",Three Coins in the Fountain,,,"Drama, Romance",,102,FALSE
+1955,Agosto,18,1956,28,"Buddy Adler, Producer",Love Is a Many-Splendored Thing,,,"Biography, Drama, Romance",,102,FALSE
+1955,Abril,11,1956,28,"Harold Hecht, Producer",Marty,,,"Drama, Romance",,90,TRUE
+1955,Julio,30,1956,28,"Leland Hayward, Producer",Mister Roberts,,,"Comedy, Drama, War",,123,FALSE
+1955,Diciembre,7,1956,28,"Fred Kohlmar, Producer",Picnic,,,"Drama, Romance",,115,FALSE
+1955,Diciembre,12,1956,28,"Hal B. Wallis, Producer",The Rose Tattoo,,,"Comedy, Drama, Romance",,117,FALSE
+1956,Octubre,17,1957,29,"Michael Todd, Producer",Around the World in 80 Days,,,"Adventure, Comedy, Family",,175,TRUE
+1956,Noviembre,25,1957,29,"William Wyler, Producer",Friendly Persuasion,,,"Drama, Romance, War",,137,FALSE
+1956,Octubre,10,1957,29,"George Stevens and Henry Ginsberg, Producers",Giant,,,"Drama, Western",,201,FALSE
+1956,Junio,28,1957,29,"Charles Brackett, Producer",The King and I,,,"Biography, Drama, Musical",,133,FALSE
+1956,Octubre,5,1957,29,"Cecil B. DeMille, Producer",The Ten Commandments,,,"Adventure, Drama",,220,FALSE
+1957,Octubre,2,1958,30,"Sam Spiegel, Producer",The Bridge on the River Kwai,,,"Adventure, Drama, War",,161,TRUE
+1957,Diciembre,12,1958,30,"Jerry Wald, Producer",Peyton Place,,,"Drama, Romance",,157,FALSE
+1957,Diciembre,5,1958,30,"William Goetz, Producer",Sayonara,,,"Drama, Romance",,147,FALSE
+1957,Abril,10,1958,30,"Henry Fonda and Reginald Rose, Producers",12 Angry Men,,,"Crime, Drama",,96,FALSE
+1957,Diciembre,17,1958,30,"Arthur Hornblow, Jr., Producer",Witness for the Prosecution,,,"Crime, Drama, Mystery",,116,FALSE
+1958,Diciembre,27,1959,31,Warner Bros.,Auntie Mame,,,"Comedy, Drama, Romance",,143,FALSE
+1958,Septiembre,18,1959,31,"Lawrence Weingarten, Producer",Cat on a Hot Tin Roof,,,Drama,,108,FALSE
+1958,Septiembre,24,1959,31,"Stanley Kramer, Producer",The Defiant Ones,,,"Crime, Drama",,96,FALSE
+1958,Mayo,15,1959,31,"Arthur Freed, Producer",Gigi,,,"Comedy, Musical, Romance",,115,TRUE
+1958,Diciembre,18,1959,31,"Harold Hecht, Producer",Separate Tables,,,"Drama, Romance",,100,FALSE
+1959,Julio,1,1960,32,"Otto Preminger, Producer",Anatomy of a Murder,,,"Crime, Drama, Mystery",,161,FALSE
+1959,Noviembre,18,1960,32,"Sam Zimbalist, Producer",Ben-Hur,,,"Adventure, Drama, History",,212,TRUE
+1959,Marzo,18,1960,32,"George Stevens, Producer",The Diary of Anne Frank,,,"Biography, Drama, Family",,180,FALSE
+1959,Junio,18,1960,32,"Henry Blanke, Producer",The Nun's Story,,,Drama,,149,FALSE
+1959,Marzo,30,1960,32,"John Woolf and James Woolf, Producers",Room at the Top,,,"Drama, Romance",,115,FALSE
+1960,Octubre,24,1961,33,"John Wayne, Producer",The Alamo,,,"Adventure, Drama, History",,162,FALSE
+1960,Junio,15,1961,33,"Billy Wilder, Producer",The Apartment,,,"Comedy, Drama, Romance",,125,TRUE
+1960,Junio,29,1961,33,"Bernard Smith, Producer",Elmer Gantry,,,Drama,,146,FALSE
+1960,Agosto,2,1961,33,"Jerry Wald, Producer",Sons and Lovers,,,Drama,,103,FALSE
+1960,Diciembre,8,1961,33,"Fred Zinnemann, Producer",The Sundowners,,,"Adventure, Drama",,133,FALSE
+1961,Junio,28,1962,34,"Joshua Logan, Producer",Fanny,,,"Drama, Romance",,134,FALSE
+1961,Junio,22,1962,34,"Carl Foreman, Producer",The Guns of Navarone,,,"Action, Adventure, Drama",,158,FALSE
+1961,Septiembre,25,1962,34,"Robert Rossen, Producer",The Hustler,,,"Drama, Sport",,134,FALSE
+1961,Diciembre,14,1962,34,"Stanley Kramer, Producer",Judgment at Nuremberg,,,"Drama, War",,179,FALSE
+1961,Diciembre,10,1962,34,"Robert Wise, Producer",West Side Story,,,"Crime, Drama, Musical",,153,TRUE
+1962,Diciembre,10,1963,35,"Sam Spiegel, Producer",Lawrence of Arabia,,,"Adventure, Biography, Drama",,228,TRUE
+1962,Septiembre,25,1963,35,"Darryl F. Zanuck, Producer",The Longest Day,,,"Action, Drama, History",,178,FALSE
+1962,Junio,19,1963,35,"Morton Da Costa, Producer",Meredith Willson's The Music Man,,,"Comedy, Family, Musical",,151,FALSE
+1962,Noviembre,8,1963,35,"Aaron Rosenberg, Producer",Mutiny on the Bounty,,,"Adventure, Drama, History",,178,FALSE
+1962,Diciembre,25,1963,35,"Alan J. Pakula, Producer",To Kill a Mockingbird,,,"Crime, Drama",,129,FALSE
+1963,Diciembre,15,1964,36,"Elia Kazan, Producer",America America,,,Drama,,174,FALSE
+1963,Octubre,5,1964,36,"Walter Wanger, Producer",Cleopatra,,,"Biography, Drama, History",,192,FALSE
+1963,Noviembre,1,1964,36,"Bernard Smith, Producer",How the West Was Won,,,Western,,164,FALSE
+1963,Octubre,1,1964,36,"Ralph Nelson, Producer",Lilies of the Field,,,Drama,,94,FALSE
+1963,Octubre,6,1964,36,"Tony Richardson, Producer",Tom Jones,,,"Adventure, Comedy, History",,129,TRUE
+1964,Marzo,11,1965,37,"Hal B. Wallis, Producer",Becket,,,"Biography, Drama, History",,148,FALSE
+1964,Enero,29,1965,37,"Stanley Kubrick, Producer",Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,,,Comedy,,95,FALSE
+1964,Agosto,27,1965,37,"Walt Disney and Bill Walsh, Producers",Mary Poppins,,,"Comedy, Family, Fantasy",,139,FALSE
+1964,Octubre,21,1965,37,"Jack L. Warner, Producer",My Fair Lady,,,"Drama, Family, Musical",,170,TRUE
+1964,Diciembre,17,1965,37,"Michael Cacoyannis, Producer",Zorba the Greek,,,"Comedy, Drama",,142,FALSE
+1965,Agosto,3,1966,38,"Joseph Janni, Producer",Darling,,,"Drama, Romance",,128,FALSE
+1965,Diciembre,22,1966,38,"Carlo Ponti, Producer",Doctor Zhivago,,,"Drama, Romance, War",,197,FALSE
+1965,Julio,29,1966,38,"Stanley Kramer, Producer",Ship of Fools,,,"Drama, Romance, War",,149,FALSE
+1965,Marzo,2,1966,38,"Robert Wise, Producer",The Sound of Music,,,"Biography, Drama, Family",WW2 war,172,TRUE
+1965,Diciembre,8,1966,38,"Fred Coe, Producer",A Thousand Clowns,,,"Comedy, Drama, Romance",,118,FALSE
+1966,Marzo,24,1967,39,"Lewis Gilbert, Producer",Alfie,,,"Comedy, Drama",,114,FALSE
+1966,Diciembre,12,1967,39,"Fred Zinnemann, Producer",A Man for All Seasons,,,"Biography, Drama, History",,120,TRUE
+1966,Mayo,25,1967,39,"Norman Jewison, Producer",The Russians Are Coming The Russians Are Coming,,,"Comedy, War",,126,FALSE
+1966,Diciembre,20,1967,39,"Robert Wise, Producer",The Sand Pebbles,,,"Adventure, Drama, Romance",,182,FALSE
+1966,Junio,22,1967,39,"Ernest Lehman, Producer",Who's Afraid of Virginia Woolf?,,,Drama,,131,FALSE
+1967,Agosto,13,1968,40,"Warren Beatty, Producer",Bonnie and Clyde,,,"Action, Biography, Crime",,111,FALSE
+1967,Diciembre,19,1968,40,"Arthur P. Jacobs, Producer",Doctor Dolittle,,,"Adventure, Comedy, Family",,152,FALSE
+1967,Diciembre,21,1968,40,"Lawrence Turman, Producer",The Graduate,,,"Comedy, Drama, Romance",,106,FALSE
+1967,Diciembre,12,1968,40,"Stanley Kramer, Producer",Guess Who's Coming to Dinner,,,"Comedy, Drama",,108,FALSE
+1967,Agosto,2,1968,40,"Walter Mirisch, Producer",In the Heat of the Night,,,"Crime, Drama, Mystery",,110,TRUE
+1968,Septiembre,18,1969,41,"Ray Stark, Producer",Funny Girl,,,"Biography, Comedy, Drama",,151,FALSE
+1968,Octubre,30,1969,41,"Martin Poll, Producer",The Lion in Winter,,,"Biography, Drama, History",,134,FALSE
+1968,Septiembre,26,1969,41,"John Woolf, Producer",Oliver!,,,"Drama, Family, Musical",,153,TRUE
+1968,Agosto,26,1969,41,"Paul Newman, Producer","Rachel, Rachel",,,"Drama, Romance",,101,FALSE
+1968,Agosto,20,1969,41,"Anthony Havelock-Allan and John Brabourne, Producers",Romeo and Juliet,,,"Drama, Romance",,138,FALSE
+1969,Diciembre,18,1970,42,"Hal B. Wallis, Producer",Anne of the Thousand Days,,,"Biography, Drama, History",,145,FALSE
+1969,Septiembre,24,1970,42,"John Foreman, Producer",Butch Cassidy and the Sundance Kid,,,"Biography, Crime, Drama",,110,FALSE
+1969,Diciembre,16,1970,42,"Ernest Lehman, Producer","Hello, Dolly!",,,"Adventure, Comedy, Musical",,146,FALSE
+1969,Mayo,25,1970,42,"Jerome Hellman, Producer",Midnight Cowboy,,,Drama,,113,TRUE
+1969,Febrero,26,1970,42,"Jacques Perrin and Hamed Rachedi, Producers",Z,,,"Crime, Drama, History",,127,FALSE
+1970,Marzo,5,1971,43,"Ross Hunter, Producer",Airport,,,"Action, Drama, Thriller",,137,FALSE
+1970,Septiembre,12,1971,43,"Bob Rafelson and Richard Wechsler, Producers",Five Easy Pieces,,,Drama,,98,FALSE
+1970,Diciembre,16,1971,43,"Howard G. Minsky, Producer",Love Story,,,"Drama, Romance",,100,FALSE
+1970,Enero,25,1971,43,"Ingo Preminger, Producer",M*A*S*H,,,"Comedy, Drama, War",Korean War,116,FALSE
+1970,Febrero,4,1971,43,"Frank McCarthy, Producer",Patton,,,"Biography, Drama, War",,172,TRUE
+1971,Diciembre,19,1972,44,"Stanley Kubrick, Producer",A Clockwork Orange,,,"Crime, Drama, Sci-Fi",,136,FALSE
+1971,Noviembre,3,1972,44,"Norman Jewison, Producer",Fiddler on the Roof,,,"Drama, Family, Musical",,181,FALSE
+1971,Octubre,9,1972,44,"Philip D'Antoni, Producer",The French Connection,,,"Action, Crime, Drama",,104,TRUE
+1971,Octubre,22,1972,44,"Stephen J. Friedman, Producer",The Last Picture Show,,,"Drama, Romance",,118,FALSE
+1971,Diciembre,13,1972,44,"Sam Spiegel, Producer",Nicholas and Alexandra,,,"Biography, Drama, History",,183,FALSE
+1972,Febrero,13,1973,45,"Cy Feuer, Producer",Cabaret,,,"Drama, Music, Musical",WW2 war,124,FALSE
+1972,Julio,30,1973,45,"John Boorman, Producer",Deliverance,,,"Adventure, Drama, Thriller",,109,FALSE
+1972,Marzo,8,1973,45,"Bengt Forslund, Producer",The Emigrants,,,"Drama, History",,151,FALSE
+1972,Marzo,24,1973,45,"Albert S. Ruddy, Producer",The Godfather,,,"Crime, Drama",,175,TRUE
+1972,Septiembre,24,1973,45,"Robert B. Radnitz, Producer",Sounder,,,"Drama, Family",,105,FALSE
+1973,Agosto,1,1974,46,"Francis Ford Coppola, Producer; Gary Kurtz, Co-Producer",American Graffiti,,,"Comedy, Drama",,110,FALSE
+1973,Diciembre,21,1974,46,"Ingmar Bergman, Producer",Cries and Whispers,,,Drama,,91,FALSE
+1973,Diciembre,26,1974,46,"William Peter Blatty, Producer",The Exorcist,,,Horror,,122,FALSE
+1973,Diciembre,25,1974,46,"Tony Bill, Michael Phillips and Julia Phillips, Producers",The Sting,,,"Comedy, Crime, Drama",,129,TRUE
+1973,Mayo,25,1974,46,"Melvin Frank, Producer",A Touch of Class,,,"Comedy, Romance",,106,FALSE
+1974,Junio,20,1975,47,"Robert Evans, Producer",Chinatown,,,"Drama, Mystery, Thriller",,130,FALSE
+1974,Abril,7,1975,47,"Francis Ford Coppola, Producer; Fred Roos, Co-Producer",The Conversation,,,"Drama, Mystery, Thriller",,113,FALSE
+1974,Diciembre,20,1975,47,"Francis Ford Coppola, Producer; Gray Frederickson and Fred Roos, Co-Producers",The Godfather Part II,,,"Crime, Drama",,202,TRUE
+1974,Noviembre,10,1975,47,"Marvin Worth, Producer",Lenny,,,"Biography, Drama",,111,FALSE
+1974,Diciembre,14,1975,47,"Irwin Allen, Producer",The Towering Inferno,,,"Action, Drama, Thriller",,165,FALSE
+1975,Diciembre,18,1976,48,"Stanley Kubrick, Producer",Barry Lyndon,,,"Adventure, Drama, History",,185,FALSE
+1975,Septiembre,21,1976,48,"Martin Bregman and Martin Elfand, Producers",Dog Day Afternoon,,,"Biography, Crime, Drama",,125,FALSE
+1975,Junio,20,1976,48,"Richard D. Zanuck and David Brown, Producers",Jaws,,,"Adventure, Thriller",,124,FALSE
+1975,Junio,11,1976,48,"Robert Altman, Producer",Nashville,,,"Comedy, Drama, Music",,160,FALSE
+1975,Noviembre,19,1976,48,"Saul Zaentz and Michael Douglas, Producers",One Flew over the Cuckoo's Nest,,,Drama,,133,TRUE
+1976,Abril,9,1977,49,"Walter Coblenz, Producer",All the President's Men,,,"Biography, Drama, History",,138,FALSE
+1976,Diciembre,5,1977,49,"Robert F. Blumofe and Harold Leventhal, Producers",Bound for Glory,,,"Biography, Drama, Music",,147,FALSE
+1976,Noviembre,27,1977,49,"Howard Gottfried, Producer",Network,,,Drama,,121,FALSE
+1976,Diciembre,3,1977,49,"Irwin Winkler and Robert Chartoff, Producers",Rocky,,,"Drama, Sport",,120,TRUE
+1976,Febrero,8,1977,49,"Michael Phillips and Julia Phillips, Producers",Taxi Driver,,,"Crime, Drama",,114,FALSE
+1977,Abril,20,1978,50,"Charles H. Joffe, Producer",Annie Hall,,,"Comedy, Romance",,93,TRUE
+1977,Noviembre,30,1978,50,"Ray Stark, Producer",The Goodbye Girl,,,"Comedy, Drama, Romance",,111,FALSE
+1977,Octubre,2,1978,50,"Richard Roth, Producer",Julia,,,Drama,,117,FALSE
+1977,Mayo,25,1978,50,"Gary Kurtz, Producer",Star Wars,,,"Action, Adventure, Fantasy",,121,FALSE
+1977,Noviembre,14,1978,50,"Herbert Ross and Arthur Laurents, Producers",The Turning Point,,,"Drama, Romance",,119,FALSE
+1978,Febrero,15,1979,51,"Jerome Hellman, Producer",Coming Home,,,"Drama, Romance, War",,127,FALSE
+1978,Diciembre,8,1979,51,"Barry Spikings, Michael Deeley, Michael Cimino and John Peverall, Producers",The Deer Hunter,,,"Drama, War",,183,TRUE
+1978,Agosto,11,1979,51,"Warren Beatty, Producer",Heaven Can Wait,,,"Comedy, Fantasy, Romance",,101,FALSE
+1978,Octubre,6,1979,51,"Alan Marshall and David Puttnam, Producers",Midnight Express,,,"Biography, Crime, Drama",,121,FALSE
+1978,Marzo,5,1979,51,"Paul Mazursky and Tony Ray, Producers",An Unmarried Woman,,,"Comedy, Drama, Romance",,124,FALSE
+1979,Diciembre,20,1980,52,"Robert Alan Aurthur, Producer",All That Jazz,,,"Drama, Music, Musical",,123,FALSE
+1979,Agosto,15,1980,52,"Francis Coppola, Producer; Fred Roos, Gray Frederickson and Tom Sternberg, Co-Producers",Apocalypse Now,,,"Drama, Mystery, War",Vietnam War,147,FALSE
+1979,Julio,18,1980,52,"Peter Yates, Producer",Breaking Away,,,"Comedy, Drama, Romance",,101,FALSE
+1979,Diciembre,19,1980,52,"Stanley R. Jaffe, Producer",Kramer vs. Kramer,,,Drama,,105,TRUE
+1979,Marzo,2,1980,52,"Tamara Asseyev and Alex Rose, Producers",Norma Rae,,,Drama,,114,FALSE
+1980,Marzo,7,1981,53,"Bernard Schwartz, Producer",Coal Miner's Daughter,,,"Biography, Drama, Music",,124,FALSE
+1980,Octubre,3,1981,53,"Jonathan Sanger, Producer",The Elephant Man,,,"Biography, Drama",,124,FALSE
+1980,Septiembre,19,1981,53,"Ronald L. Schwary, Producer",Ordinary People,,,Drama,,124,TRUE
+1980,Noviembre,14,1981,53,"Irwin Winkler and Robert Chartoff, Producers",Raging Bull,,,"Biography, Drama, Sport",,129,FALSE
+1980,Diciembre,12,1981,53,"Claude Berri, Producer; Timothy Burrill, Co-Producer",Tess,,,"Drama, Romance",,186,FALSE
+1981,Septiembre,2,1982,54,"Denis Heroux and John Kemeny, Producers",Atlantic City,,,"Crime, Drama, Romance",,104,FALSE
+1981,Marzo,30,1982,54,"David Puttnam, Producer",Chariots of Fire,,,"Biography, Drama, Sport",,125,TRUE
+1981,Diciembre,4,1982,54,"Bruce Gilbert, Producer",On Golden Pond,,,Drama,,109,FALSE
+1981,Junio,12,1982,54,"Frank Marshall, Producer",Raiders of the Lost Ark,,,"Action, Adventure",,115,FALSE
+1981,Diciembre,4,1982,54,"Warren Beatty, Producer",Reds,,,"Biography, Drama, History",,195,FALSE
+1982,Junio,11,1983,55,"Steven Spielberg and Kathleen Kennedy, Producers",E.T. The Extra-Terrestrial,,,"Family, Sci-Fi",,115,FALSE
+1982,Noviembre,30,1983,55,"Richard Attenborough, Producer",Gandhi,,,"Biography, Drama, History",,191,TRUE
+1982,Febrero,12,1983,55,"Edward Lewis and Mildred Lewis, Producers",Missing,,,"Biography, Drama, History",,122,FALSE
+1982,Diciembre,17,1983,55,"Sydney Pollack and Dick Richards, Producers",Tootsie,,,"Comedy, Drama, Romance",,116,FALSE
+1982,Diciembre,8,1983,55,"Richard D. Zanuck and David Brown, Producers",The Verdict,,,Drama,,129,FALSE
+1983,Septiembre,28,1984,56,"Michael Shamberg, Producer",The Big Chill,,,"Comedy, Drama",,105,FALSE
+1983,Diciembre,6,1984,56,"Peter Yates, Producer",The Dresser,,,Drama,,118,FALSE
+1983,Octubre,21,1984,56,"Irwin Winkler and Robert Chartoff, Producers",The Right Stuff,,,"Adventure, Biography, Drama",,193,FALSE
+1983,Marzo,4,1984,56,"Philip S. Hobel, Producer",Tender Mercies,,,"Drama, Music",,92,FALSE
+1983,Noviembre,23,1984,56,"James L. Brooks, Producer",Terms of Endearment,,,"Comedy, Drama",,132,TRUE
+1984,Septiembre,19,1985,57,"Saul Zaentz, Producer",Amadeus,,,"Biography, Drama, History",,160,TRUE
+1984,Noviembre,2,1985,57,"David Puttnam, Producer",The Killing Fields,,,"Biography, Drama, History",,141,FALSE
+1984,Diciembre,14,1985,57,"John Brabourne and Richard Goodwin, Producers",A Passage to India,,,"Adventure, Drama, History",,164,FALSE
+1984,Septiembre,21,1985,57,"Arlene Donovan, Producer",Places in the Heart,,,Drama,,111,FALSE
+1984,Septiembre,13,1985,57,"Norman Jewison, Ronald L. Schwary and Patrick Palmer, Producers",A Soldier's Story,,,"Crime, Drama, Mystery",,101,FALSE
+1985,Diciembre,18,1986,58,Quincy Jones,The Color Purple,,,Drama,,154,FALSE
+1985,Mayo,13,1986,58,"David Weisman, Producer",Kiss of the Spider Woman,,,Drama,,120,FALSE
+1985,Diciembre,18,1986,58,"Sydney Pollack, Producer",Out of Africa,,,"Biography, Drama, Romance",,161,TRUE
+1985,Junio,14,1986,58,"John Foreman, Producer",Prizzi's Honor,,,"Comedy, Crime, Drama",,130,FALSE
+1985,Febrero,8,1986,58,"Edward S. Feldman, Producer",Witness,,,"Crime, Drama, Romance",,112,FALSE
+1986,Octubre,3,1987,59,"Burt Sugarman and Patrick Palmer, Producers",Children of a Lesser God,,,"Drama, Romance",,119,FALSE
+1986,Febrero,7,1987,59,"Robert Greenhut, Producer",Hannah and Her Sisters,,,"Comedy, Drama",,107,FALSE
+1986,Octubre,31,1987,59,"Fernando Ghia and David Puttnam, Producers",The Mission,,,"Adventure, Drama, History",,125,FALSE
+1986,Diciembre,19,1987,59,"Arnold Kopelson, Producer",Platoon,,,"Drama, War",,120,TRUE
+1986,Abril,11,1987,59,"Ismail Merchant, Producer",A Room with a View,,,"Drama, Romance",,117,FALSE
+1987,Diciembre,16,1988,60,"James L. Brooks, Producer",Broadcast News,,,"Comedy, Drama, Romance",,133,FALSE
+1987,Septiembre,18,1988,60,"Stanley R. Jaffe and Sherry Lansing, Producers",Fatal Attraction,,,"Drama, Thriller",,119,FALSE
+1987,Octubre,9,1988,60,"John Boorman, Producer",Hope and Glory,,,"Comedy, Drama, Romance",,113,FALSE
+1987,Noviembre,20,1988,60,"Jeremy Thomas, Producer",The Last Emperor,,,"Biography, Drama, History",,163,TRUE
+1987,Diciembre,16,1988,60,"Patrick Palmer and Norman Jewison, Producers",Moonstruck,,,"Comedy, Drama, Romance",,102,FALSE
+1988,Diciembre,23,1989,61,"Lawrence Kasdan, Charles Okun and Michael Grillo, Producers",The Accidental Tourist,,,"Drama, Romance",,121,FALSE
+1988,Diciembre,16,1989,61,"Norma Heyman and Hank Moonjean, Producers",Dangerous Liaisons,,,"Drama, Romance",,119,FALSE
+1988,Diciembre,9,1989,61,"Frederick Zollo and Robert F. Colesberry, Producers",Mississippi Burning,,,"Crime, Drama, History",,128,FALSE
+1988,Diciembre,16,1989,61,"Mark Johnson, Producer",Rain Man,,,Drama,,133,TRUE
+1988,Diciembre,21,1989,61,"Douglas Wick, Producer",Working Girl,,,"Comedy, Drama, Romance",,113,FALSE
+1989,Diciembre,20,1990,62,"A. Kitman Ho and Oliver Stone, Producers",Born on the Fourth of July,,,"Biography, Drama, War",,145,FALSE
+1989,Junio,2,1990,62,"Steven Haft, Paul Junger Witt and Tony Thomas, Producers",Dead Poets Society,,,"Comedy, Drama",,128,FALSE
+1989,Diciembre,15,1990,62,"Richard D. Zanuck and Lili Fini Zanuck, Producers",Driving Miss Daisy,,,Drama,,99,TRUE
+1989,Abril,21,1990,62,"Lawrence Gordon and Charles Gordon, Producers",Field of Dreams,,,"Drama, Family, Fantasy",,107,FALSE
+1989,Septiembre,13,1990,62,"Noel Pearson, Producer",My Left Foot,,,"Biography, Drama",,103,FALSE
+1990,Diciembre,22,1991,63,"Walter F. Parkes and Lawrence Lasker, Producers",Awakenings,,,"Biography, Drama",,121,FALSE
+1990,Noviembre,9,1991,63,"Jim Wilson and Kevin Costner, Producers",Dances With Wolves,,,"Adventure, Drama, Western",,181,TRUE
+1990,Julio,13,1991,63,"Lisa Weinstein, Producer",Ghost,,,"Drama, Fantasy, Romance",,127,FALSE
+1990,Diciembre,25,1991,63,"Francis Ford Coppola, Producer","The Godfather, Part III",,,"Crime, Drama",,162,FALSE
+1990,Septiembre,19,1991,63,"Irwin Winkler, Producer",Good Fellas,,,"Biography, Crime, Drama",,146,FALSE
+1991,Noviembre,13,1992,64,"Don Hahn, Producer",Beauty and the Beast,,,"Animation, Family, Fantasy",,84,FALSE
+1991,Diciembre,13,1992,64,"Mark Johnson, Barry Levinson and Warren Beatty, Producers",Bugsy,,,"Biography, Crime, Drama",,136,FALSE
+1991,Diciembre,20,1992,64,"A. Kitman Ho and Oliver Stone, Producers",JFK,,,"Drama, History, Thriller",,189,FALSE
+1991,Diciembre,25,1992,64,"Barbra Streisand and Andrew Karsch, Producers",The Prince of Tides,,,"Drama, Romance",,132,FALSE
+1991,Febrero,14,1992,64,"Edward Saxon, Kenneth Utt and Ron Bozman, Producers",The Silence of the Lambs,,,"Crime, Drama, Thriller",,118,TRUE
+1992,Septiembre,2,1993,65,"Stephen Woolley, Producer",The Crying Game,,,"Crime, Drama, Romance",,112,FALSE
+1992,Diciembre,11,1993,65,"David Brown, Rob Reiner and Andrew Scheinman, Producers",A Few Good Men,,,"Drama, Thriller",,138,FALSE
+1992,Marzo,13,1993,65,"Ismail Merchant, Producer",Howards End,,,"Drama, Romance",,142,FALSE
+1992,Diciembre,23,1993,65,"Martin Brest, Producer",Scent of a Woman,,,Drama,,156,FALSE
+1992,Agosto,7,1993,65,"Clint Eastwood, Producer",Unforgiven,,,"Drama, Western",,130,TRUE
+1993,Agosto,6,1994,66,"Arnold Kopelson, Producer",The Fugitive,,,"Action, Crime, Drama",,130,FALSE
+1993,Diciembre,12,1994,66,"Jim Sheridan, Producer",In the Name of the Father,,,"Biography, Crime, Drama",,133,FALSE
+1993,Mayo,19,1994,66,"Jan Chapman, Producer",The Piano,,,"Drama, Music, Romance",,121,FALSE
+1993,Noviembre,5,1994,66,"Mike Nichols, John Calley and Ismail Merchant, Producers",The Remains of the Day,,,"Drama, Romance",,134,FALSE
+1993,Diciembre,15,1994,66,"Steven Spielberg, Gerald R. Molen and Branko Lustig, Producers",Schindler's List,,,"Biography, Drama, History",,195,TRUE
+1994,Julio,6,1995,67,"Wendy Finerman, Steve Tisch and Steve Starkey, Producers",Forrest Gump,,,"Drama, Romance",,142,TRUE
+1994,Marzo,9,1995,67,"Duncan Kenworthy, Producer",Four Weddings and a Funeral,,,"Comedy, Drama, Romance",,117,FALSE
+1994,Octubre,14,1995,67,"Lawrence Bender, Producer",Pulp Fiction,,,"Crime, Drama",,154,FALSE
+1994,Septiembre,14,1995,67,"Robert Redford, Michael Jacobs, Julian Krainin and Michael Nozik, Producers",Quiz Show,,,"Biography, Drama, History",,133,FALSE
+1994,Septiembre,23,1995,67,"Niki Marvin, Producer",The Shawshank Redemption,,,Drama,,142,FALSE
+1995,Junio,30,1996,68,"Brian Grazer, Producer",Apollo 13,,,"Adventure, Drama, History",,140,FALSE
+1995,Agosto,4,1996,68,"George Miller, Doug Mitchell and Bill Miller, Producers",Babe,,,"Comedy, Drama, Family",,91,FALSE
+1995,Mayo,24,1996,68,"Mel Gibson, Alan Ladd, Jr. and Bruce Davey, Producers",Braveheart,,,"Biography, Drama, History",,178,TRUE
+1995,Septiembre,22,1996,68,"Mario Cecchi Gori, Vittorio Cecchi Gori and Gaetano Daniele, Producers",The Postman (Il Postino),,,"Biography, Comedy, Drama",,108,FALSE
+1995,Diciembre,13,1996,68,"Lindsay Doran, Producer",Sense and Sensibility,,,"Drama, Romance",,136,FALSE
+1996,Noviembre,6,1997,69,"Saul Zaentz, Producer",The English Patient,,,"Drama, Romance, War",,162,TRUE
+1996,Marzo,8,1997,69,"Ethan Coen, Producer",Fargo,,,"Crime, Drama, Thriller",,98,FALSE
+1996,Diciembre,13,1997,69,"James L. Brooks, Laurence Mark, Richard Sakai and Cameron Crowe, Producers",Jerry Maguire,,,"Comedy, Drama, Romance",,139,FALSE
+1996,Mayo,24,1997,69,"Simon Channing-Williams, Producer",Secrets & Lies,,,"Comedy, Drama",,136,FALSE
+1996,Agosto,15,1997,69,"Jane Scott, Producer",Shine,,,"Biography, Drama, Music",,105,FALSE
+1997,Diciembre,23,1998,70,"James L. Brooks, Bridget Johnson and Kristi Zea, Producers",As Good as It Gets,,,"Comedy, Drama, Romance",,139,FALSE
+1997,Agosto,13,1998,70,"Uberto Pasolini, Producer",The Full Monty,,,"Comedy, Drama",,91,FALSE
+1997,Diciembre,5,1998,70,"Lawrence Bender, Producer",Good Will Hunting,,,"Drama, Romance",,126,FALSE
+1997,Septiembre,19,1998,70,"Arnon Milchan, Curtis Hanson and Michael Nathanson, Producers",L.A. Confidential,,,"Crime, Drama, Mystery",,138,FALSE
+1997,Diciembre,19,1998,70,"James Cameron and Jon Landau, Producers",Titanic,,,"Drama, Romance",,194,TRUE
+1998,Octubre,23,1999,71,"Alison Owen, Eric Fellner and Tim Bevan, Producers",Elizabeth,,,"Biography, Drama, History",,124,FALSE
+1998,Octubre,23,1999,71,"Elda Ferri and Gianluigi Braschi, Producers",Life Is Beautiful,,,"Comedy, Drama, Romance",,116,FALSE
+1998,Julio,24,1999,71,"Steven Spielberg, Ian Bryce, Mark Gordon and Gary Levinsohn, Producers",Saving Private Ryan,,,"Drama, War",,169,FALSE
+1998,Diciembre,11,1999,71,"David Parfitt, Donna Gigliotti, Harvey Weinstein, Edward Zwick and Marc Norman, Producers",Shakespeare in Love,,,"Comedy, Drama, History",,123,TRUE
+1998,Diciembre,25,1999,71,"Robert Michael Geisler, John Roberdeau and Grant Hill, Producers",The Thin Red Line,,,"Drama, War",,170,FALSE
+1999,Septiembre,15,2000,72,"Bruce Cohen and Dan Jinks, Producers",American Beauty,,,Drama,,122,TRUE
+1999,Diciembre,10,2000,72,"Richard N. Gladstein, Producer",The Cider House Rules,,,"Drama, Romance",,126,FALSE
+1999,Diciembre,10,2000,72,"David Valdes and Frank Darabont, Producers",The Green Mile,,,"Crime, Drama, Fantasy",,189,FALSE
+1999,Noviembre,5,2000,72,"Michael Mann and Pieter Jan Brugge, Producers",The Insider,,,"Biography, Drama, Thriller",,157,FALSE
+1999,Agosto,6,2000,72,"Frank Marshall, Kathleen Kennedy and Barry Mendel, Producers",The Sixth Sense,,,"Drama, Mystery, Thriller",,107,FALSE
+2000,Diciembre,15,2001,73,"David Brown, Kit Golden and Leslie Holleran, Producers",Chocolat,,,"Drama, Romance",,121,FALSE
+2000,Julio,6,2001,73,"Bill Kong, Hsu Li Kong and Ang Lee, Producers","Crouching Tiger, Hidden Dragon",,,"Action, Adventure, Fantasy",,120,FALSE
+2000,Marzo,17,2001,73,"Danny DeVito, Michael Shamberg and Stacey Sher, Producers",Erin Brockovich,,,"Biography, Drama",,131,FALSE
+2000,Mayo,5,2001,73,"Douglas Wick, David Franzoni and Branko Lustig, Producers",Gladiator,,,"Action, Adventure, Drama",,155,TRUE
+2000,Diciembre,27,2001,73,"Edward Zwick, Marshall Herskovitz and Laura Bickford, Producers",Traffic,,,"Crime, Drama, Thriller",,147,FALSE
+2001,Diciembre,21,2002,74,"Brian Grazer and Ron Howard, Producers",A Beautiful Mind,,,"Biography, Drama",,135,TRUE
+2001,Noviembre,7,2002,74,"Robert Altman, Bob Balaban and David Levy, Producers",Gosford Park,,,"Comedy, Drama, Mystery",,131,FALSE
+2001,Noviembre,23,2002,74,"Graham Leader, Ross Katz and Todd Field, Producers",In the Bedroom,,,"Crime, Drama",,131,FALSE
+2001,Diciembre,19,2002,74,"Peter Jackson, Fran Walsh and Barrie M. Osborne, Producers",The Lord of the Rings: The Fellowship of the Ring,,,"Action, Adventure, Drama",,178,FALSE
+2001,Diciembre,23,2002,74,"Martin Brown, Baz Luhrmann and Fred Baron, Producers",Moulin Rouge,,,"Drama, Musical, Romance",,127,FALSE
+2002,Diciembre,27,2003,75,"Martin Richards, Producer",Chicago,,,"Comedy, Crime, Musical",,113,TRUE
+2002,Diciembre,20,2003,75,"Alberto Grimaldi and Harvey Weinstein, Producers",Gangs of New York,,,"Crime, Drama",,167,FALSE
+2002,Diciembre,25,2003,75,"Scott Rudin and Robert Fox, Producers",The Hours,,,"Drama, Romance",,110,FALSE
+2002,Diciembre,18,2003,75,"Barrie M. Osborne, Fran Walsh and Peter Jackson, Producers",The Lord of the Rings: The Two Towers,,,"Action, Adventure, Drama",,179,FALSE
+2002,Septiembre,25,2003,75,"Roman Polanski, Robert Benmussa and Alain Sarde, Producers",The Pianist,,,"Biography, Drama, Music",,150,FALSE
+2003,Diciembre,17,2004,76,"Barrie M. Osborne, Peter Jackson and Fran Walsh, Producers",The Lord of the Rings: The Return of the King,,,"Action, Adventure, Drama",,201,TRUE
+2003,Septiembre,12,2004,76,"Ross Katz and Sofia Coppola, Producers",Lost in Translation,,,"Comedy, Drama",,102,FALSE
+2003,Noviembre,14,2004,76,"Samuel Goldwyn, Jr., Peter Weir and Duncan Henderson, Producers",Master and Commander: The Far Side of the World,,,"Action, Adventure, Drama",,138,FALSE
+2003,Octubre,8,2004,76,"Robert Lorenz, Judie G. Hoyt and Clint Eastwood, Producers",Mystic River,,,"Crime, Drama, Mystery",,138,FALSE
+2003,Julio,25,2004,76,"Kathleen Kennedy, Frank Marshall and Gary Ross, Producers",Seabiscuit,,,"Drama, History, Sport",,140,FALSE
+2004,Diciembre,25,2005,77,"Michael Mann and Graham King, Producers",The Aviator,,,"Biography, Drama",,170,FALSE
+2004,Octubre,29,2005,77,"Richard N. Gladstein and Nellie Bellflower, Producers",Finding Neverland,,,"Biography, Drama, Family",,106,FALSE
+2004,Diciembre,15,2005,77,"Clint Eastwood, Albert S. Ruddy and Tom Rosenberg, Producers",Million Dollar Baby,,,"Drama, Sport",,132,TRUE
+2004,Octubre,29,2005,77,"Taylor Hackford, Stuart Benjamin and Howard Baldwin, Producers",Ray,,,"Biography, Drama, Music",,152,FALSE
+2004,Octubre,22,2005,77,"Michael London, Producer",Sideways,,,"Comedy, Drama, Romance",,127,FALSE
+2005,Diciembre,9,2006,78,"Diana Ossana and James Schamus, Producers",Brokeback Mountain,,,"Drama, Romance",,134,FALSE
+2005,Septiembre,30,2006,78,"Caroline Baron, William Vince and Michael Ohoven, Producers",Capote,,,"Biography, Crime, Drama",,114,FALSE
+2005,Mayo,6,2006,78,"Paul Haggis and Cathy Schulman, Producers",Crash,,,"Crime, Drama, Thriller",,112,TRUE
+2005,Septiembre,16,2006,78,"Grant Heslov, Producer","Good Night, and Good Luck.",,,"Biography, Drama, History",,93,FALSE
+2005,Diciembre,23,2006,78,"Kathleen Kennedy, Steven Spielberg and Barry Mendel, Producers",Munich,,,"Action, Drama, History",,164,FALSE
+2006,Octubre,27,2007,79,"Alejandro Gonz√°lez I√±√°rritu, Jon Kilik and Steve Golin, Producers",Babel,,,Drama,,143,FALSE
+2006,Octubre,6,2007,79,"Graham King, Producer",The Departed,,,"Crime, Drama, Thriller",,151,TRUE
+2006,Diciembre,20,2007,79,"Clint Eastwood, Steven Spielberg and Robert Lorenz, Producers",Letters from Iwo Jima,,,"Action, Adventure, Drama",,141,FALSE
+2006,Julio,26,2007,79,"David T. Friendly, Peter Saraf and Marc Turtletaub, Producers",Little Miss Sunshine,,,"Comedy, Drama",,101,FALSE
+2006,Septiembre,15,2007,79,"Andy Harries, Christine Langan and Tracey Seaward, Producers",The Queen,,,"Biography, Drama, History",,103,FALSE
+2007,Septiembre,7,2008,80,"Tim Bevan, Eric Fellner and Paul Webster, Producers",Atonement,,,"Drama, Mystery, Romance",,123,FALSE
+2007,Diciembre,5,2008,80,"Lianne Halfon, Mason Novick and Russell Smith, Producers",Juno,,,"Comedy, Drama",,96,FALSE
+2007,Octubre,5,2008,80,"Sydney Pollack, Jennifer Fox and Kerry Orent, Producers",Michael Clayton,,,"Crime, Drama, Mystery",,119,FALSE
+2007,Noviembre,9,2008,80,"Scott Rudin, Ethan Coen and Joel Coen, Producers",No Country for Old Men,,,"Crime, Drama, Thriller",,122,TRUE
+2007,Diciembre,26,2008,80,"JoAnne Sellar, Paul Thomas Anderson and Daniel Lupi, Producers",There Will Be Blood,,,Drama,,158,FALSE
+2008,Diciembre,25,2009,81,"Kathleen Kennedy, Frank Marshall and Ce√°n Chaffin, Producers",The Curious Case of Benjamin Button,,,"Drama, Fantasy, Romance",,166,FALSE
+2008,Diciembre,5,2009,81,"Brian Grazer, Ron Howard and Eric Fellner, Producers",Frost/Nixon,,,"Biography, Drama, History",,122,FALSE
+2008,Noviembre,26,2009,81,"Dan Jinks and Bruce Cohen, Producers",Milk,,,"Biography, Drama",,128,FALSE
+2008,Diciembre,10,2009,81,"Anthony Minghella, Sydney Pollack, Donna Gigliotti and Redmond Morris, Producers",The Reader,,,"Drama, Romance",,124,FALSE
+2008,Noviembre,12,2009,81,"Christian Colson, Producer",Slumdog Millionaire,,,"Drama, Romance",,120,TRUE
+2009,Diciembre,18,2010,82,"James Cameron and Jon Landau, Producers",Avatar,,,"Action, Adventure, Fantasy",,162,FALSE
+2009,Noviembre,20,2010,82,"Gil Netter, Andrew A. Kosove and Broderick Johnson, Producers",The Blind Side,,,"Biography, Drama, Sport",,129,FALSE
+2009,Agosto,14,2010,82,"Peter Jackson and Carolynne Cunningham, Producers",District 9,,,"Action, Sci-Fi, Thriller",,112,FALSE
+2009,Octubre,16,2010,82,"Finola Dwyer and Amanda Posey, Producers",An Education,,,Drama,,100,FALSE
+2009,Junio,26,2010,82,"Kathryn Bigelow, Mark Boal, Nicolas Chartier and Greg Shapiro, Producers",The Hurt Locker,,,"Drama, Thriller, War",,131,TRUE
+2009,Agosto,21,2010,82,"Lawrence Bender, Producer",Inglourious Basterds,,,"Adventure, Drama, War",,153,FALSE
+2009,Noviembre,6,2010,82,Lee Daniels,Precious: Based on the Novel 'Push' by Sapphire,,,Drama,,110,FALSE
+2009,Octubre,2,2010,82,"Joel Coen and Ethan Coen, Producers",A Serious Man,,,"Comedy, Drama",,106,FALSE
+2009,Mayo,29,2010,82,"Jonas Rivera, Producer",Up,,,"Animation, Adventure, Comedy",,96,FALSE
+2009,Diciembre,4,2010,82,"Daniel Dubiecki, Ivan Reitman and Jason Reitman, Producers",Up in the Air,,,"Comedy, Drama, Romance",,109,FALSE
+2010,Diciembre,3,2011,83,"Mike Medavoy, Brian Oliver and Scott Franklin, Producers",Black Swan,,,"Drama, Thriller",,108,FALSE
+2010,Diciembre,10,2011,83,"David Hoberman, Todd Lieberman and Mark Wahlberg, Producers",The Fighter,,,"Biography, Drama, Sport",,116,FALSE
+2010,Julio,16,2011,83,"Emma Thomas and Christopher Nolan, Producers",Inception,,,"Action, Adventure, Sci-Fi",,148,FALSE
+2010,Julio,9,2011,83,"Gary Gilbert, Jeffrey Levy-Hinte and Celine Rattray, Producers",The Kids Are All Right,,,"Comedy, Drama, Romance",,106,FALSE
+2010,Septiembre,6,2011,83,"Iain Canning, Emile Sherman and Gareth Unwin, Producers",The King's Speech,,,"Biography, Drama, History",,118,TRUE
+2010,Noviembre,5,2011,83,"Christian Colson, Danny Boyle and John Smithson, Producers",127 Hours,,,"Biography, Drama",,94,FALSE
+2010,Octubre,1,2011,83,"Scott Rudin, Dana Brunetti, Michael De Luca and Ce√°n Chaffin, Producers",The Social Network,,,"Biography, Drama",,120,FALSE
+2010,Junio,18,2011,83,"Darla K. Anderson, Producer",Toy Story 3,,,"Animation, Adventure, Comedy",,103,FALSE
+2010,Diciembre,22,2011,83,"Scott Rudin, Ethan Coen and Joel Coen, Producers",True Grit,,,"Drama, Western",,110,FALSE
+2010,Junio,11,2011,83,"Anne Rosellini and Alix Madigan-Yorkin, Producers",Winter's Bone,,,"Drama, Mystery",,100,FALSE
+2011,Octubre,12,2012,84,"Thomas Langmann, Producer",The Artist,,,"Comedy, Drama, Romance",,100,TRUE
+2011,Noviembre,18,2012,84,"Jim Burke, Alexander Payne and Jim Taylor, Producers",The Descendants,,,"Comedy, Drama",,115,FALSE
+2011,Diciembre,25,2012,84,"Scott Rudin, Producer",Extremely Loud & Incredibly Close,,,"Adventure, Drama, Mystery",,129,FALSE
+2011,Agosto,10,2012,84,"Brunson Green, Chris Columbus and Michael Barnathan, Producers",The Help,,,Drama,,146,FALSE
+2011,Noviembre,23,2012,84,"Graham King and Martin Scorsese, Producers",Hugo,,,"Drama, Family, Fantasy",,126,FALSE
+2011,Mayo,20,2012,84,"Letty Aronson and Stephen Tenenbaum, Producers",Midnight in Paris,,,"Comedy, Fantasy, Romance",,94,FALSE
+2011,Septiembre,23,2012,84,"Michael De Luca, Rachael Horovitz and Brad Pitt, Producers",Moneyball,,,"Biography, Drama, Sport",,133,FALSE
+2011,Mayo,27,2012,84,"Sarah Green, Bill Pohlad, Dede Gardner and Grant Hill, Producers",The Tree of Life,,,"Drama, Fantasy",,139,FALSE
+2011,Diciembre,25,2012,84,"Steven Spielberg and Kathleen Kennedy, Producers",War Horse,,,"Action, Adventure, Drama",,146,FALSE
+2012,Septiembre,20,2013,85,"Margaret Menegoz, Stefan Arndt, Veit Heiduschka and Michael Katz, Producers",Amour,,,Drama,,127,FALSE
+2012,Octubre,12,2013,85,"Grant Heslov, Ben Affleck and George Clooney, Producers",Argo,,,"Biography, Drama, Thriller",,120,TRUE
+2012,Junio,27,2013,85,"Dan Janvey, Josh Penn and Michael Gottwald, Producers",Beasts of the Southern Wild,,,"Adventure, Drama, Fantasy",,93,FALSE
+2012,Diciembre,25,2013,85,"Stacey Sher, Reginald Hudlin and Pilar Savone, Producers",Django Unchained,,,"Drama, Western",,165,FALSE
+2012,Diciembre,25,2013,85,"Tim Bevan, Eric Fellner, Debra Hayward and Cameron Mackintosh, Producers",Les Mis√©rables,,,"Drama, History, Musical",,158,FALSE
+2012,Noviembre,21,2013,85,"Gil Netter, Ang Lee and David Womark, Producers",Life of Pi,,,"Adventure, Drama, Fantasy",,127,FALSE
+2012,Noviembre,9,2013,85,"Steven Spielberg and Kathleen Kennedy, Producers",Lincoln,,,"Biography, Drama, History",,,FALSE
+2012,Noviembre,16,2013,85,"Donna Gigliotti, Bruce Cohen and Jonathan Gordon, Producers",Silver Linings Playbook,,,"Comedy, Drama, Romance",,122,FALSE
+2012,Diciembre,19,2013,85,"Mark Boal, Kathryn Bigelow and Megan Ellison, Producers",Zero Dark Thirty,,,"Drama, History, Thriller",,157,FALSE
+2013,Diciembre,13,2014,86,"Charles Roven, Richard Suckle, Megan Ellison and Jonathan Gordon, Producers",American Hustle,,,"Crime, Drama",,138,FALSE
+2013,Octubre,11,2014,86,"Scott Rudin, Dana Brunetti and Michael De Luca, Producers",Captain Phillips,,,"Adventure, Biography, Crime",,134,FALSE
+2013,Noviembre,1,2014,86,"Robbie Brenner and Rachel Winter, Producers",Dallas Buyers Club,,,"Biography, Drama",,117,FALSE
+2013,Octubre,4,2014,86,"Alfonso Cuar√≥n and David Heyman, Producers",Gravity,,,"Drama, Sci-Fi, Thriller",,91,FALSE
+2013,Diciembre,18,2014,86,"Megan Ellison, Spike Jonze and Vincent Landay, Producers",Her,,,"Drama, Romance, Sci-Fi",,126,FALSE
+2013,Noviembre,15,2014,86,"Albert Berger and Ron Yerxa, Producers",Nebraska,,,"Adventure, Comedy, Drama",,115,FALSE
+2013,Noviembre,27,2014,86,"Gabrielle Tana, Steve Coogan and Tracey Seaward, Producers",Philomena,,,"Biography, Comedy, Drama",,98,FALSE
+2013,Octubre,18,2014,86,Steve McQueen,12 Years a Slave,,,"Biography, Drama, History",,134,TRUE
+2013,Diciembre,25,2014,86,"Martin Scorsese, Leonardo DiCaprio, Joey McFarland and Emma Tillinger Koskoff, Producers",The Wolf of Wall Street,,,"Biography, Crime, Drama",,180,FALSE
+2014,Diciembre,25,2015,87,"Clint Eastwood, Robert Lorenz, Andrew Lazar, Bradley Cooper and Peter Morgan, Producers",American Sniper,,,"Action, Biography, Drama",,133,FALSE
+2014,Octubre,17,2015,87,"Alejandro G. I√±√°rritu, John Lesher and James W. Skotchdopole, Producers",Birdman or (The Unexpected Virtue of Ignorance),,,"Comedy, Drama",,119,TRUE
+2014,Julio,11,2015,87,"Richard Linklater and Cathleen Sutherland, Producers",Boyhood,,,Drama,,165,FALSE
+2014,Marzo,7,2015,87,"Wes Anderson, Scott Rudin, Steven Rales and Jeremy Dawson, Producers",The Grand Budapest Hotel,,,"Adventure, Comedy, Crime",,99,FALSE
+2014,Noviembre,28,2015,87,"Nora Grossman, Ido Ostrowsky and Teddy Schwarzman, Producers",The Imitation Game,,,"Biography, Drama, Thriller",,114,FALSE
+2014,Diciembre,25,2015,87,"Christian Colson, Oprah Winfrey, Dede Gardner and Jeremy Kleiner, Producers",Selma,,,"Biography, Drama, History",,128,FALSE
+2014,Noviembre,7,2015,87,"Tim Bevan, Eric Fellner, Lisa Bruce and Anthony McCarten, Producers",The Theory of Everything,,,"Biography, Drama, Romance",,123,FALSE
+2014,Octubre,10,2015,87,"Jason Blum, Helen Estabrook and David Lancaster, Producers",Whiplash,,,"Drama, Music",,106,FALSE
+2015,Diciembre,11,2016,88,"Brad Pitt, Dede Gardner and Jeremy Kleiner, Producers",The Big Short,,,"Biography, Comedy, Drama",,130,FALSE
+2015,Octubre,16,2016,88,"Steven Spielberg, Marc Platt and Kristie Macosko Krieger, Producers",Bridge of Spies,,,"Drama, History, Thriller",,142,FALSE
+2015,Noviembre,4,2016,88,"Finola Dwyer and Amanda Posey, Producers",Brooklyn,,,"Drama, Romance",,117,FALSE
+2015,Mayo,15,2016,88,"Doug Mitchell and George Miller, Producers",Mad Max: Fury Road,,,"Action, Adventure, Sci-Fi",,120,FALSE
+2015,Octubre,2,2016,88,"Simon Kinberg, Ridley Scott, Michael Schaefer and Mark Huffam, Producers",The Martian,,,"Adventure, Drama, Sci-Fi",,144,FALSE
+2015,Diciembre,25,2016,88,"Arnon Milchan, Steve Golin, Alejandro G. I√±√°rritu, Mary Parent and Keith Redmon, Producers",The Revenant,,,"Action, Adventure, Drama",,156,FALSE
+2015,Octubre,16,2016,88,"Ed Guiney, Producer",Room,,,"Drama, Thriller",,118,FALSE
+2015,Noviembre,6,2016,88,"Michael Sugar, Steve Golin, Nicole Rocklin and Blye Pagon Faust, Producers",Spotlight,,,"Biography, Crime, Drama",,129,TRUE
+2016,Noviembre,11,2017,89,"Shawn Levy, Dan Levine, Aaron Ryder and David Linde, Producers",Arrival,,,"Drama, Sci-Fi",,116,FALSE
+2016,Diciembre,16,2017,89,"Scott Rudin, Denzel Washington and Todd Black, Producers",Fences,,,Drama,,139,FALSE
+2016,Noviembre,4,2017,89,"Bill Mechanic and David Permut, Producers",Hacksaw Ridge,,,"Biography, Drama, History",,139,FALSE
+2016,Agosto,12,2017,89,"Carla Hacken and Julie Yorn, Producers",Hell or High Water,,,"Action, Crime, Drama",,102,FALSE
+2016,Diciembre,25,2017,89,"Donna Gigliotti, Peter Chernin, Jenno Topping, Pharrell Williams and Theodore Melfi, Producers",Hidden Figures,,,"Biography, Drama, History",,127,FALSE
+2016,Diciembre,9,2017,89,"Fred Berger, Jordan Horowitz and Marc Platt, Producers",La La Land,,,"Comedy, Drama, Music",,128,FALSE
+2016,Noviembre,25,2017,89,"Emile Sherman, Iain Canning and Angie Fielder, Producers",Lion,,,"Biography, Drama",,118,FALSE
+2016,Noviembre,18,2017,89,"Matt Damon, Kimberly Steward, Chris Moore, Lauren Beck and Kevin J. Walsh, Producers",Manchester by the Sea,,,Drama,,137,FALSE
+2016,Octubre,21,2017,89,"Adele Romanski, Dede Gardner and Jeremy Kleiner, Producers",Moonlight,,,Drama,,111,TRUE
+2017,Noviembre,24,2018,90,"Peter Spears, Luca Guadagnino, Emilie Georges and Marco Morabito, Producers",Call Me by Your Name,,,"Drama, Romance",,132,FALSE
+2017,Noviembre,22,2018,90,"Tim Bevan, Eric Fellner, Lisa Bruce, Anthony McCarten and Douglas Urbanski, Producers",Darkest Hour,,,"Biography, Drama, History",,125,FALSE
+2017,Julio,21,2018,90,"Emma Thomas and Christopher Nolan, Producers",Dunkirk,,,"Action, Drama, History",,106,FALSE
+2017,Febrero,24,2018,90,Jordan Peele,Get Out,,,"Horror, Mystery, Thriller",,104,FALSE
+2017,Noviembre,3,2018,90,"Scott Rudin, Eli Bush and Evelyn O'Neill, Producers",Lady Bird,,,"Comedy, Drama",,94,FALSE
+2017,Diciembre,25,2018,90,"JoAnne Sellar, Paul Thomas Anderson, Megan Ellison and Daniel Lupi, Producers",Phantom Thread,,,"Drama, Romance",,130,FALSE
+2017,Diciembre,22,2018,90,"Amy Pascal, Steven Spielberg and Kristie Macosko Krieger, Producers",The Post,,,Drama,,116,FALSE
+2017,Diciembre,1,2018,90,"Guillermo del Toro and J. Miles Dale, Producers",The Shape of Water,,,"Adventure, Drama, Fantasy",,123,TRUE
+2017,Noviembre,10,2018,90,"Graham Broadbent, Pete Czernin and Martin McDonagh, Producers","Three Billboards outside Ebbing, Missouri",,,"Comedy, Crime, Drama",,115,FALSE
+2018,Febrero,16,2019,91,"Kevin Feige, Producer",Black Panther,,,"Action, Adventure, Sci-Fi",,134,FALSE
+2018,Agosto,10,2019,91,Jordan Peele,BlacKkKlansman,,,"Biography, Comedy, Crime",,135,FALSE
+2018,Noviembre,2,2019,91,"Graham King, Producer",Bohemian Rhapsody,,,"Biography, Drama, Music",,134,FALSE
+2018,Noviembre,23,2019,91,"Ceci Dempsey, Ed Guiney, Lee Magiday and Yorgos Lanthimos, Producers",The Favourite,,,"Biography, Comedy, Drama",,119,FALSE
+2018,Noviembre,16,2019,91,"Jim Burke, Charles B. Wessler, Brian Currie, Peter Farrelly and Nick Vallelonga, Producers",Green Book,,,"Biography, Comedy, Drama",,130,TRUE
+2018,Noviembre,21,2019,91,"Gabriela Rodr√≠guez and Alfonso Cuar√≥n, Producers",Roma,,,Drama,,135,FALSE
+2018,Abril,27,2019,91,"Bill Gerber, Bradley Cooper and Lynette Howell Taylor, Producers",A Star Is Born,,,"Drama, Music, Romance",,136,FALSE
+2018,Diciembre,25,2019,91,"Dede Gardner, Jeremy Kleiner, Adam McKay and Kevin Messick, Producers",Vice,,,"Biography, Comedy, Drama",,132,FALSE
+2019,Noviembre,15,2020,92,"Peter Chernin, Jenno Topping and James Mangold, Producers",Ford v Ferrari,,,"Action, Biography, Drama",,152,FALSE
+2019,Noviembre,1,2020,92,"Martin Scorsese, Robert De Niro, Jane Rosenthal and Emma Tillinger Koskoff, Producers",The Irishman,,,"Biography, Crime, Drama",,209,FALSE
+2019,Octubre,18,2020,92,"Carthew Neal, Taika Waititi and Chelsea Winstanley, Producers",Jojo Rabbit,,,"Comedy, Drama, War",,108,FALSE
+2019,Octubre,4,2020,92,"Todd Phillips, Bradley Cooper and Emma Tillinger Koskoff, Producers",Joker,,,"Crime, Drama, Thriller",,122,FALSE
+2019,Diciembre,25,2020,92,"Amy Pascal, Producer",Little Women,,,"Drama, Romance",,135,FALSE
+2019,Noviembre,6,2020,92,"Noah Baumbach and David Heyman, Producers",Marriage Story,,,"Comedy, Drama, Romance",,137,FALSE
+2019,Diciembre,25,2020,92,"Sam Mendes, Pippa Harris, Jayne-Ann Tenggren and Callum McDougall, Producers",1917,,,"Action, Drama, War",,119,FALSE
+2019,Julio,26,2020,92,"David Heyman, Shannon McIntosh and Quentin Tarantino, Producers",Once upon a Time...in Hollywood,,,"Comedy, Drama",,161,FALSE
+2019,Octubre,8,2020,92,"Kwak Sin Ae and Bong Joon Ho, Producers",Parasite,,,"Comedy, Drama, Thriller",,132,TRUE
+,Diciembre,18,2021,93,"David Parfitt, Jean-Louis Livi and Philippe Carcassonne, Producers",The Father,,,Drama,,97,FALSE
+,Febrero,12,2021,93,"Shaka King, Charles D. King and Ryan Coogler, Producers",Judas and the Black Messiah,,,"Biography, Drama, History",,126,FALSE
+,Noviembre,13,2021,93,"Ceán Chaffin, Eric Roth and Douglas Urbanski, Producers",Mank,,,"Biography, Comedy, Drama",,131,FALSE
+,Diciembre,11,2021,93,"Christina Oh, Producer",Minari,,,Drama,,115,FALSE
+,Diciembre,4,2021,93,"Frances McDormand, Peter Spears, Mollye Asher, Dan Janvey and Chloé Zhao, Producers",Nomadland,,,Drama,,107,TRUE
+,Diciembre,25,2021,93,"Ben Browning, Ashley Fox, Emerald Fennell and Josey McNamara, Producers",Promising Young Woman,,,"Crime, Drama, Thriller",,113,FALSE
+,Noviembre,20,2021,93,"Bert Hamelinck and Sacha Ben Harroche, Producers",Sound of Metal,,,"Drama, Music",,120,FALSE
+,Septiembre,25,2021,93,"Marc Platt and Stuart Besser, Producers",The Trial of the Chicago 7,,,"Drama, History, Thriller",,129,FALSE
+,Noviembre,12,2022,94,"Laura Berwick, Kenneth Branagh, Becca Kovacik and Tamar Thomas, Producers",Belfast,,,"Biography, Drama",,98,FALSE
+,Agosto,13,2022,94,"Philippe Rousselet, Fabrice Gianfermi and Patrick Wachsberger, Producers",CODA,,,"Comedy, Drama, Music",,111,TRUE
+,Diciembre,10,2022,94,"Adam McKay and Kevin Messick, Producers",Don't Look Up,,,"Comedy, Drama, Sci-Fi",,138,FALSE
+,Agosto,20,2022,94,"Teruhisa Yamamoto, Producer",Drive My Car,,,Drama,,179,FALSE
+,Octubre,22,2022,94,"Mary Parent, Denis Villeneuve and Cale Boyter, Producers",Dune,,,"Action, Adventure, Drama",,155,FALSE
+,Noviembre,19,2022,94,"Tim White, Trevor White and Will Smith, Producers",King Richard,,,"Biography, Drama, Sport",,144,FALSE
+,Noviembre,26,2022,94,"Sara Murphy, Adam Somner and Paul Thomas Anderson, Producers",Licorice Pizza,,,"Comedy, Drama, Romance",,133,FALSE
+,Diciembre,17,2022,94,"Guillermo del Toro, J. Miles Dale and Bradley Cooper, Producers",Nightmare Alley,,,"Crime, Drama, Film-Noir",,150,FALSE
+,Noviembre,17,2022,94,"Jane Campion, Tanya Seghatchian, Emile Sherman, Iain Canning and Roger Frappier, Producers",The Power of the Dog,,,"Drama, Western",,126,FALSE
+,Diciembre,10,2022,94,"Steven Spielberg and Kristie Macosko Krieger, Producers",West Side Story,,,"Crime, Drama, Musical",,156,FALSE
+,Octubre,7,2023,95,"Malte Grunert, Producer",All Quiet on the Western Front,,,"Action, Drama, War",,148,FALSE
+,Diciembre,16,2023,95,"James Cameron and Jon Landau, Producers",Avatar: The Way of Water,,,"Action, Adventure, Fantasy",,192,FALSE
+,Octubre,21,2023,95,"Graham Broadbent, Pete Czernin and Martin McDonagh, Producers",The Banshees of Inisherin,,,"Comedy, Drama",,114,FALSE
+,Junio,24,2023,95,"Baz Luhrmann, Catherine Martin, Gail Berman, Patrick McCormick and Schuyler Weiss, Producers",Elvis,,,"Biography, Drama, Music",,159,FALSE
+,Marzo,25,2023,95,"Daniel Kwan, Daniel Scheinert and Jonathan Wang, Producers",Everything Everywhere All at Once,,,"Action, Adventure, Comedy",,139,TRUE
+,Noviembre,11,2023,95,"Kristie Macosko Krieger, Steven Spielberg and Tony Kushner, Producers",The Fabelmans,,,Drama,,151,FALSE
+,Octubre,7,2023,95,"Todd Field, Alexandra Milchan and Scott Lambert, Producers",Tár,,,"Drama, Music",,158,FALSE
+,Mayo,27,2023,95,"Tom Cruise, Christopher McQuarrie, David Ellison and Jerry Bruckheimer, Producers",Top Gun: Maverick,,,"Action, Drama",,130,FALSE
+,Octubre,7,2023,95,"Erik Hemmendorff and Philippe Bober, Producers",Triangle of Sadness,,,"Comedy, Drama",,147,FALSE
+,Diciembre,23,2023,95,"Dede Gardner, Jeremy Kleiner and Frances McDormand, Producers",Women Talking,,,Drama,,104,FALSE
+,Diciembre,15,2024,96,"Ben LeClair, Nikos Karamigios, Cord Jefferson and Jermaine Johnson, Producers",American Fiction,,,"Comedy, Drama",,117,FALSE
+,Agosto,23,2024,96,"Marie-Ange Luciani and David Thion, Producers",Anatomy of a Fall,,,"Crime, Drama, Mystery",,151,FALSE
+,Julio,21,2024,96,"David Heyman, Margot Robbie, Tom Ackerley and Robbie Brenner, Producers",Barbie,,,"Adventure, Comedy, Fantasy",,114,FALSE
+,Octubre,27,2024,96,"Mark Johnson, Producer",The Holdovers,,,"Comedy, Drama",,133,FALSE
+,Octubre,20,2024,96,"Dan Friedkin, Bradley Thomas, Martin Scorsese and Daniel Lupi, Producers",Killers of the Flower Moon,,,"Crime, Drama, History",,206,FALSE
+,Noviembre,22,2024,96,"Bradley Cooper, Steven Spielberg, Fred Berner, Amy Durning and Kristie Macosko Krieger, Producers",Maestro,,,"Biography, Drama, Music",,129,FALSE
+,Julio,21,2024,96,"Emma Thomas, Charles Roven and Christopher Nolan, Producers",Oppenheimer,,,"Biography, Drama, History",WW2 war,180,TRUE
+,Junio,2,2024,96,"David Hinojosa, Christine Vachon and Pamela Koffler, Producers",Past Lives,,,"Drama, Romance",,105,FALSE
+,Diciembre,8,2024,96,"Ed Guiney, Andrew Lowe, Yorgos Lanthimos and Emma Stone, Producers",Poor Things,,,"Comedy, Drama, Sci-Fi",,141,FALSE
+,Diciembre,15,2024,96,"James Wilson, Producer",The Zone of Interest,,,"Drama, History, War",WW2 war,105,FALSE
+,Octubre,18,2025,97,"Alex Coco, Samantha Quan and Sean Baker, Producers",Anora,,,"Drama, Romance, Comedy",,139,TRUE
+,Diciembre,20,2025,97,"Nick Gordon, Brian Young, Andrew Morrison, D.J. Gugenheim and Brady Corbet, Producers",The Brutalist,,,Drama,WW2 war,215,FALSE
+,Diciembre,25,2025,97,"Fred Berger, James Mangold and Alex Heineman, Producers",A Complete Unknown,,,"Biography, Drama, Music",,141,FALSE
+,Octubre,25,2025,97,"Tessa Ross, Juliette Howell and Michael A. Jackman, Producers",Conclave,,,"Drama, Thriller",,120,FALSE
+,Marzo,1,2025,97,"Mary Parent, Cale Boyter, Tanya Lapointe and Denis Villeneuve, Producers",Dune: Part Two,,,"Sci-Fi, Adventure, Drama",,166,FALSE
+,Noviembre,1,2025,97,"Pascal Caucheteux and Jacques Audiard, Producers",Emilia Pérez,,,"Musical, Crime, Thriller",,132,FALSE
+,Septiembre,1,2025,97,"Maria Carlota Bruno and Rodrigo Teixeira, Producers",I'm Still Here,,,"Drama, Biography",,137,FALSE
+,Diciembre,13,2025,97,"Dede Gardner, Jeremy Kleiner and Joslyn Barnes, Producers",Nickel Boys,,,"Drama, History",,140,FALSE
+,Septiembre,20,2025,97,"Coralie Fargeat and Tim Bevan & Eric Fellner, Producers",The Substance,,,"Horror, Sci-Fi, Drama",,141,FALSE
+,Noviembre,22,2025,97,"Marc Platt, Producer",Wicked,,,"Musical, Fantasy, Romance",,160,FALSE
+,Noviembre,7,2026,98,"Ed Guiney & Andrew Lowe, Yorgos Lanthimos, Emma Stone and Lars Knudsen, Producers",Bugonia,,,"Black Comedy, Sci-Fi, Thriller",,118,FALSE
+,Junio,27,2026,98,"Chad Oman, Brad Pitt, Dede Gardner, Jeremy Kleiner, Joseph Kosinski and Jerry Bruckheimer, Producers",F1,,,"Action, Drama, Sport",,155,FALSE
+,Octubre,17,2026,98,"Guillermo del Toro, J. Miles Dale and Scott Stuber, Producers",Frankenstein,,,"Drama, Fantasy, Horror",,149,FALSE
+,Noviembre,27,2026,98,"Liza Marshall, Pippa Harris, Nicolas Gonda, Steven Spielberg and Sam Mendes, Producers",Hamnet,,,"Drama, History",,125,FALSE
+,Diciembre,25,2026,98,"Eli Bush, Ronald Bronstein, Josh Safdie, Anthony Katagas and Timothée Chalamet, Producers",Marty Supreme,,,"Drama, Sport",,149,FALSE
+,Septiembre,26,2026,98,"Adam Somner, Sara Murphy and Paul Thomas Anderson, Producers",One Battle After Another,,,"Action, Black Comedy, Thriller",,161,TRUE
+,Octubre,10,2026,98,"Emilie Lesclaux, Producer",The Secret Agent,,,"Crime, Drama, Thriller",,161,FALSE
+,Mayo,20,2026,98,"Maria Ekerhovd and Andrea Berentsen Ottmar, Producers",Sentimental Value,,,Drama,,135,FALSE
+,Marzo,7,2026,98,"Zinzi Coogler, Sev Ohanian and Ryan Coogler, Producers",Sinners,,,"Drama, Horror, Thriller",,137,FALSE
+,Noviembre,14,2026,98,"Marissa McMahon, Teddy Schwarzman, Will Janowitz, Ashley Schlaifer and Michael Heimler, Producers",Train Dreams,,,Drama,,102,FALSE

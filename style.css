@@ -1,0 +1,1252 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f1115;
+  --text: #e8e8ea;
+  --muted: #8b8f98;
+  /* Disposición vertical: gráfico arriba (a lo ancho), texto abajo, ambos centrados.
+     script.js lee --chart-top, --text-top y --margin: se ajustan solo aquí. */
+  --margin: 48px;       /* margen a cada lado del gráfico */
+  --chart-top: 224px;   /* dónde empieza el gráfico (bajado 100px para acercarlo al texto) */
+  --text-top: calc(64vh + 100px);   /* línea donde termina el gráfico y empieza la zona de texto */
+  --text-w: 720px;      /* ancho máximo de la columna de texto */
+  --step-h: 34vh;       /* recorrido de scroll de cada paso */
+  /* Posición del paso cuando está "encajado": su centro queda en el centro de la zona de texto */
+  --step-offset: calc((var(--text-top) + 100vh - var(--step-h)) / 2);
+  --zoom-stroke: 2px;   /* grosor del contorno amarillo de los círculos del zoom in y de sus líneas */
+  --zoom-color: #f2c230;   /* color del zoom in: el amarillo de las ganadoras */
+}
+
+/* Scroll snap: al terminar de scrollear, la página se acomoda para que el
+   paso más cercano quede centrado. "mandatory" siempre encaja; cambiar a
+   "proximity" para que solo encaje cuando el texto ya está cerca del centro. */
+html { scroll-snap-type: y mandatory; }
+
+body {
+  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  transition: background-color 1.2s ease;   /* cambio suave del tinte por género */
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.scrolly {
+  position: relative;
+  z-index: 1;                     /* por encima del video de fondo de la portada */
+}
+
+/* ---------- Visualización ---------- */
+/* Ocupa toda la pantalla (fija); script.js dibuja el gráfico solo en la franja
+   superior, entre --chart-top y --text-top */
+#vis {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: visible;
+}
+#svg { display: block; overflow: visible; }
+
+.label      { fill: var(--text); font-size: 15px; font-weight: 700; }
+.label-orbit { font-family: "Outfit", sans-serif; font-size: 30px; font-weight: 700; }   /* nombres de género en la órbita */
+.label-subtitle { fill: #fff; font-family: "Outfit", sans-serif; font-size: 24px; font-weight: 400; }   /* subtítulo debajo de OSCARS */
+.label-sub  { fill: var(--muted); font-size: 12px; }
+.label-rate { fill: #f2c230; font-size: 16px; font-weight: 700; }
+.tick       { fill: var(--muted); font-size: 11px; }
+/* Histograma de duración: los minutos (eje X) mandan; la cantidad por columna queda secundaria */
+.tick-dur      { fill: var(--text); font-size: 14px; font-weight: 600; }
+.tick-dur-unit { fill: var(--text); font-size: 13px; font-weight: 500; }
+.label-count   { fill: var(--muted); font-size: 10px; font-weight: 400; }
+.gridline   { stroke: #2a2d35; stroke-width: 1; }
+.gridline-v { stroke: #2a2d35; stroke-width: 0.75; stroke-dasharray: 2 3; }   /* separadores de década */
+/* Eje X de la línea de tiempo: destacado (línea, marcas y años en blanco) */
+.axis-x     { stroke: var(--text); stroke-width: 1.5; }
+.tick-axis  { fill: var(--text); font-size: 15px; font-weight: 600; }
+.trendline  { stroke: #fff; stroke-width: 3; stroke-linecap: round; }   /* línea de tendencia */
+.label-trend { fill: #fff; font-size: 14px; font-weight: 600; }
+.panel      { fill: #111317; }   /* recuadro oscuro detrás de una grilla destacada */
+
+#dots circle { cursor: pointer; }
+#extra { pointer-events: none; }   /* puntos de relleno: sin tooltip */
+/* Marcas de año de un bloque de género: "1927 →" y "← 2026" */
+.year-mark { pointer-events: none; }
+.year-mark path { fill: none; stroke: var(--text); stroke-width: 1.2; }
+.year-mark text { fill: var(--text); font-size: 13px; dominant-baseline: middle; }
+.zoomlink, .zoomring {   /* línea y contorno del zoom in: trazo continuo */
+  fill: none; stroke: var(--zoom-color); stroke-width: var(--zoom-stroke);
+  pointer-events: none;
+}
+
+.label-value { fill: var(--text); font-size: 14px; font-weight: 600; }   /* cantidad al final de cada barra */
+/* Texto arriba de cada bloque de género (tasa de victoria): nombre y porcentaje */
+.label-block      { fill: var(--text); font-size: 13px; font-weight: 700; }
+.label-block-rate { fill: #f2c230; font-weight: 700; }
+
+#legend {
+  position: absolute;
+  left: var(--margin); right: var(--margin);
+  top: calc(var(--chart-top) - 46px);   /* centrada, encima del gráfico y separada de la barra de progreso */
+  justify-content: center;
+  display: flex; flex-wrap: wrap; gap: 6px 14px;
+  font-size: 12px; color: var(--muted);
+  transition: opacity .4s;
+}
+#legend span { display: inline-flex; align-items: center; gap: 5px; }
+#legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+#legend span.dim { opacity: .4; }   /* géneros que no son foco: grises y tenues */
+
+/* Halo que late detrás del punto de una película destacada */
+.halo {
+  fill: #f2c230;
+  pointer-events: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: halo-pulse 1.8s ease-in-out infinite;
+}
+@keyframes halo-pulse {
+  0%, 100% { transform: scale(.6);  fill-opacity: .55; }
+  50%      { transform: scale(1.15); fill-opacity: .12; }
+}
+
+/* ---------- Textos ---------- */
+/* Los textos se superponen a la pantalla fija (margin-top: -100vh) y pasan
+   por la franja inferior. Al subir, script.js los recorta exactamente en
+   --text-top, así nunca tapan el gráfico. */
+.steps {
+  position: relative;
+  margin-top: -100vh;
+  padding: var(--step-offset) 16px 10vh;
+  pointer-events: none;        /* los puntos de debajo siguen respondiendo al mouse */
+}
+.step[hidden] { display: none !important; }   /* paso desactivado: no ocupa scroll ni se dispara */
+.step {
+  height: var(--step-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* al soltar el scroll, el paso queda centrado en la zona de texto */
+  scroll-snap-align: start;
+  scroll-margin-top: var(--step-offset);
+}
+
+.card {
+  width: 100%;
+  max-width: var(--text-w);
+  text-align: center;
+}
+/* Texto fijo durante varios pasos (.hold): la tarjeta queda pegada al centro de
+   la zona de texto mientras se scrollean los pasos que contiene, y al final
+   sube y se recorta como cualquier otra */
+.hold-pin {
+  position: sticky;
+  top: calc((var(--text-top) + 100vh) / 2);   /* centro de la zona de texto */
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.hold-pin .card { transform: translateY(-50%); }
+
+.card h1 { font-size: 1.6rem; line-height: 1.2; margin-bottom: .8rem; }
+.card h2 { font-size: 1.25rem; margin-bottom: .6rem; }
+.card p + p { margin-top: .6rem; }
+/* Sin palabras huérfanas: el navegador reparte mejor las líneas (y script.js
+   además une las dos últimas palabras con un espacio que no corta) */
+.card p, .card h1, .card h2, .card h3, #zoom-info .zi-desc { text-wrap: pretty; }
+/* Cifra destacada encima del título (p. ej. "622 películas") */
+.card .big-num {
+  display: block;
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.02em;
+  margin-bottom: .5rem;
+}
+.hint { color: var(--muted); font-size: .9rem; }
+
+/* ---------- Barra de progreso ---------- */
+/* Un segmento por sección; cada uno se llena según el avance dentro de ella */
+#progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+  display: flex;
+  gap: 4px;
+  padding: calc(env(safe-area-inset-top, 0px) + 14px) 88px 0 var(--margin);
+  pointer-events: none;
+}
+#progress .seg { flex: 1; }
+#progress .track {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.14);
+  overflow: hidden;
+}
+#progress .fill {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+#progress .name {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: .04em;
+  color: var(--muted);
+  transition: color .3s;
+}
+#progress .seg.current .name { color: #fff; }
+
+/* ---------- Menú hamburguesa ---------- */
+#menu-btn {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 8px);
+  right: 24px;
+  z-index: 22;
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#menu-btn:hover { background: rgba(255,255,255,.08); }
+#menu-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+#menu-btn span {
+  width: 22px; height: 2px;
+  background: #fff;
+  border-radius: 1px;
+  transition: transform .3s, opacity .3s;
+}
+/* Abierto: las tres líneas se convierten en una X */
+#menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+#menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+#menu {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 60px);
+  right: 24px;
+  z-index: 21;
+  min-width: 240px;
+  padding: 10px;
+  background: rgba(10,11,14,.96);
+  border: 1px solid #2a2d35;
+  border-radius: 10px;
+}
+#menu ol { list-style: none; }
+#menu button {
+  display: flex; align-items: baseline; gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+#menu button:hover:not(:disabled) { background: rgba(255,255,255,.08); }
+#menu button:focus-visible { outline: 2px solid #fff; outline-offset: -2px; }
+#menu button .num { color: var(--muted); font-size: 12px; min-width: 18px; }
+#menu button[aria-current="true"] { font-weight: 600; }
+#menu button[aria-current="true"] .num { color: #f2c230; }
+#menu button:disabled { color: #5b5f68; cursor: default; }
+#menu button .soon { margin-left: auto; font-size: 11px; color: #5b5f68; }
+
+/* ---------- Movie-Zoom-In ---------- */
+/* Capa fija a pantalla completa; clip-path la recorta en un círculo que se anima
+   desde el punto de la película hasta una bola grande en el centro. */
+#zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;     /* el scroll sigue funcionando */
+  background: #000;
+  clip-path: circle(0px at 50% 50%);
+  visibility: hidden;
+}
+#zoom.open { visibility: visible; }
+/* El iframe cubre toda la pantalla manteniendo 16:9 (como object-fit: cover) */
+#zoom iframe {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: max(100vw, 177.78vh);
+  height: max(100vh, 56.25vw);
+  transform: translate(-50%, -50%) scale(1.12);   /* recorta los bordes de la interfaz */
+  filter: grayscale(1);       /* blanco y negro primero; encima va el filtro de color del género */
+  border: 0;
+  opacity: 0;                 /* solo se ve mientras reproduce (ver .playing) */
+  transition: opacity .5s;
+}
+#zoom.playing iframe { opacity: 1; }
+
+/* Título superpuesto al video, centrado dentro del círculo */
+#zoom-title {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  text-shadow: 0 2px 18px rgba(0,0,0,.6);   /* legible sobre cualquier fotograma */
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity .6s;
+}
+#zoom.open.titled #zoom-title { opacity: 1; }
+/* Capa negra sobre el video para oscurecerlo (paso con texto descriptivo) */
+/* Filtro de color del género sobre el video, en modo de fusión.
+   Probar otros modos: multiply, screen, overlay, soft-light, hue… */
+#zoom-tint {
+  position: absolute; inset: 0;
+  background: var(--tint, transparent);
+  mix-blend-mode: soft-light;   /* tinte suave: aporta el color del género sin aplanar el video */
+  opacity: .7;                  /* intensidad del filtro */
+  transition: background-color .6s;
+}
+
+#zoom-dim {
+  position: absolute; inset: 0;
+  background: #000;
+  opacity: 0;
+  transition: opacity .8s;
+}
+#zoom.dimmed #zoom-dim { opacity: .65; }   /* sube el valor para oscurecer más */
+
+/* Frase descriptiva que reemplaza al título */
+#zoom-caption {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(560px, 70vmin);
+  text-align: center;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.25;
+  opacity: 0;
+  transition: opacity .6s;
+}
+#zoom.open.captioned #zoom-caption { opacity: 1; }
+
+#zoom-title h2 { font-size: 60px; font-weight: 700; line-height: 1.1; }
+#zoom-title p  { font-size: 60px; font-weight: 400; line-height: 1.1; }
+
+/* ---------- Tooltip ---------- */
+#tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: #000d;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity .15s;
+  z-index: 10;
+  max-width: 240px;
+}
+#tooltip b { display: block; font-size: 13px; }
+
+/* ---------- Móvil ---------- */
+@media (max-width: 800px) {
+  :root { --margin: 16px; }
+  .card { font-size: .9rem; }
+  .card h1 { font-size: 1.3rem; }
+  .card h2 { font-size: 1.1rem; }
+  .card .big-num { font-size: 2.6rem; }
+  #progress { padding-left: 16px; padding-right: 76px; }
+  #progress .name { display: none; }   /* en pantallas chicas, solo la barra */
+  #menu-btn { right: 16px; }
+  #menu { right: 16px; left: 16px; min-width: 0; }
+}
+
+/* ---------- Trío de círculos con video ---------- */
+/* --d = diámetro de cada círculo (lo fija script.js); los textos escalan con él */
+#trio {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+/* Cerrado: transparente (no "visibility: hidden") para que el navegador y
+   YouTube no frenen los videos que se están precargando */
+#trio .trio-set { opacity: 0; }
+#trio .trio-set.open { opacity: 1; }
+.trio-item {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #000;
+  transform-origin: center;
+  will-change: transform;
+}
+/* El video solo se ve mientras reproduce (clase .playing): así se ocultan el
+   ícono de pausa, la ruedita de carga y los controles que YouTube muestra al
+   cargar o al saltar. Se escala un poco para recortar los bordes de su interfaz. */
+.trio-video { position: absolute; inset: 0; opacity: 0; transition: opacity .5s; }
+/* El video solo se ve en el modo información (.active); el resto del tiempo
+   se ve la foto fija. Los videos siguen corriendo ocultos para estar listos. */
+.trio-item.active.playing .trio-video { opacity: 1; }
+
+/* Foto representativa (miniatura del video o cfg.image), mismo tratamiento:
+   blanco y negro + tinte de género encima */
+.trio-photo {
+  position: absolute; inset: 0;
+  background: #000 center / cover no-repeat;
+  filter: grayscale(1);
+  transform: scale(var(--vscale, 1.12));   /* recorta las franjas negras de algunas miniaturas */
+}
+/* El video cubre el círculo manteniendo 16:9 */
+.trio-video iframe {
+  position: absolute;
+  top: 0; left: 50%;
+  height: 100%;
+  width: 177.78%;
+  /* --vscale: ampliación por película (p. ej. para quitar franjas negras de un
+     formato panorámico); por defecto 1.12 para recortar los bordes de YouTube */
+  transform: translateX(-50%) scale(var(--vscale, 1.12));
+  filter: grayscale(1);       /* blanco y negro primero; encima va el filtro de color del género */
+  border: 0;
+}
+.trio-tint {
+  position: absolute; inset: 0;
+  background: var(--tint, transparent);
+  mix-blend-mode: soft-light;   /* mismo filtro de género que los otros videos */
+  opacity: .7;
+}
+.trio-dim {
+  position: absolute; inset: 0;
+  background: #000;
+  opacity: 0;
+  transition: opacity .8s;
+}
+.trio-item.active .trio-dim { opacity: .65; }
+
+.trio-title, .trio-caption {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  text-shadow: 0 2px 14px rgba(0,0,0,.6);
+  opacity: 0;
+  transition: opacity .6s;
+}
+.trio-title h3 { font-size: calc(var(--d, 400px) * .07); font-weight: 700; line-height: 1.1; }
+.trio-title p  { font-size: calc(var(--d, 400px) * .07); font-weight: 400; line-height: 1.2; }
+.trio-caption  { font-size: calc(var(--d, 400px) * .045); font-weight: 400; line-height: 1.3; width: 74%; }
+
+/* Título visible cuando el círculo ya creció y no es el activo;
+   el activo cambia el título por su descripción */
+.trio-set.titled .trio-item:not(.active) .trio-title { opacity: 1; }
+.trio-set.titled .trio-item.active .trio-caption { opacity: 1; transition-delay: .3s; }
+
+/* SPOT: un solo círculo al costado del rectángulo.
+   Muestra título y año arriba y la descripción debajo, sobre el video. */
+.trio-set.spot .trio-title   { top: 34%; }
+.trio-set.spot .trio-caption { top: 62%; font-size: calc(var(--d, 400px) * .05); }
+.trio-set.spot .trio-item.shown .trio-title,
+.trio-set.spot .trio-item.shown .trio-caption { opacity: 1; }
+.trio-set.spot .trio-item.shown .trio-caption { transition-delay: .3s; }
+
+/* Dato destacado dentro de un círculo (p. ej. "66 min" + una línea debajo) */
+.trio-caption .trio-stat {
+  display: block;
+  font-size: calc(var(--d, 400px) * .13);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.01em;
+}
+.trio-caption .trio-stat + span {
+  display: block;
+  margin-top: .5em;
+  font-size: calc(var(--d, 400px) * .055);
+  line-height: 1.25;
+}
+
+/* Franja de fondo para resaltar una década en la dispersión de duración */
+.decade-band { fill: rgba(242, 194, 48, .08); stroke: rgba(242, 194, 48, .35); stroke-dasharray: 3 4; }
+
+/* Cifra del tamaño del título (tríos: "3h 48 min" sobre la descripción) */
+.trio-caption.stat-title .trio-stat {
+  font-size: calc(var(--d, 400px) * .07);   /* igual que el título de la película */
+  margin-bottom: .1em;
+}
+.trio-caption.stat-title .trio-stat + span {
+  font-size: calc(var(--d, 400px) * .045);  /* igual que las demás descripciones */
+  margin-top: .4em;
+}
+
+/* ---------- Video de fondo de la portada (detrás de OSCARS) ---------- */
+#intro-video {
+  position: fixed;
+  inset: 0;
+  z-index: 0;              /* detrás del contenido (.scrolly tiene z-index 1) */
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+/* Velo oscuro para que los puntos blancos se lean sobre el video */
+#intro-video::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0, 0, 0, .55);
+}
+/* Visible en la portada (.on) cuando el video ya lleva un rato
+   reproduciéndose (.playing), así no se ve la interfaz de YouTube */
+#intro-video.on.playing { opacity: 1; }
+/* El iframe cubre la pantalla en 16:9 (como object-fit: cover) */
+#intro-video iframe {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: max(100vw, 177.78vh);
+  height: max(100vh, 56.25vw);
+  transform: translate(-50%, -50%) scale(1.12);   /* recorta los bordes de la interfaz */
+  border: 0;
+  filter: grayscale(1) contrast(1.15);            /* blanco y negro */
+}
+
+/* Texto entre los círculos de un trío (p. ej. la diferencia de duración entre
+   la nominada más corta y la más larga). Aparece junto con los títulos. */
+.trio-between {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  opacity: 0;
+  transition: opacity .6s;
+}
+.trio-set.titled .trio-between { opacity: 1; transition-delay: .3s; }
+.trio-between strong {
+  display: block;
+  font-size: calc(var(--d, 400px) * .05);   /* más chico que los textos dentro de los círculos (.055 y .13) */
+  font-weight: 700;
+  line-height: 1.05;
+}
+.trio-between span {
+  display: block;
+  margin-top: .3em;
+  font-size: calc(var(--d, 400px) * .032);
+  color: var(--muted);
+}
+
+/* ---------- Grilla de video (entre la estatuilla y "Género") ---------- */
+/* El video solo se ve dentro de círculos repetidos en una grilla de celdas
+   cuadradas de --cell (las fija script.js, junto con --oy): cada círculo coincide con un punto. */
+#mask-video {
+  position: fixed;
+  inset: 0;
+  z-index: 2;              /* por encima de los puntos */
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  -webkit-mask-image: radial-gradient(circle at center, #000 var(--mr, 20px), transparent calc(var(--mr, 20px) + 1px));
+          mask-image: radial-gradient(circle at center, #000 var(--mr, 20px), transparent calc(var(--mr, 20px) + 1px));
+  -webkit-mask-size: var(--cell, 50px) var(--cell, 50px);
+          mask-size: var(--cell, 50px) var(--cell, 50px);
+  -webkit-mask-repeat: repeat;
+          mask-repeat: repeat;
+  -webkit-mask-position: 0 var(--oy, 0px);   /* grilla centrada en vertical */
+          mask-position: 0 var(--oy, 0px);
+}
+/* Visible en su paso (.on) cuando ya lleva un rato reproduciéndose (.playing) */
+#mask-video.on.playing { opacity: 1; }
+/* El video cubre toda la pantalla (sin deformarse), en blanco y negro */
+#mask-video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+/* Patrón de puntos de relleno de la grilla de video: misma grilla que la
+   máscara (--cell, --oy), puntos blancos del tamaño de siempre (--mr). Va
+   detrás de los puntos de las películas (mismo nivel que .scrolly, antes en el HTML). */
+#dot-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .8s ease;
+  background-image: radial-gradient(circle at center, #fff var(--mr, 4px), transparent calc(var(--mr, 4px) + .6px));
+  background-size: var(--cell, 12px) var(--cell, 12px);
+  background-position: 0 var(--oy, 0px);
+}
+#dot-grid.on { opacity: 1; }
+
+/* Portada: video más oscuro para que el título blanco tenga más contraste
+   (brightness: 1 = como está, más bajo = más oscuro) */
+#mask-video.dark video { filter: grayscale(1) brightness(.4); }
+
+/* Portada (.word): la grilla de video es la de siempre y, encima del video,
+   los círculos que forman la palabra OSCARS se pintan de blanco (solo las
+   celdas de la palabra: --word-mask, la genera script.js) */
+#dot-grid.word {
+  z-index: 3;              /* por encima del video (#mask-video: 2) */
+  -webkit-mask-image: var(--word-mask);
+          mask-image: var(--word-mask);
+  -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: 0 0;
+          mask-position: 0 0;
+}
+
+/* Botón "Activar sonido": aparece solo si el navegador bloqueó el sonido del video */
+#sound-btn {
+  position: fixed;
+  right: var(--margin);
+  bottom: 28px;
+  z-index: 30;
+  padding: .55rem 1rem;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .45);
+  color: #fff;
+  font: 500 .85rem "Outfit", sans-serif;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s ease;
+}
+#sound-btn.on { opacity: 1; pointer-events: auto; }
+#sound-btn:hover { background: rgba(255, 255, 255, .12); }
+
+/* ---------- Zoom in de a una película: círculo a la izquierda, texto a la derecha ---------- */
+/* Dentro del círculo solo va el video (sin oscurecer ni textos encima) */
+.trio-set.single .trio-dim,
+.trio-set.single .trio-title,
+.trio-set.single .trio-caption { display: none; }
+
+/* Título, año y descripción: a la derecha del círculo, centrados en su alto
+   (left, top y width los fija script.js) */
+#zoom-info {
+  position: fixed;
+  z-index: 5;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+#zoom-info.on { opacity: 1; }
+/* Era del cine: en el paso intermedio va sola; en el siguiente sube y queda
+   arriba del título, el año y la descripción (que aparecen debajo) */
+#zoom-info .zi-era { font-size: 2.4rem; font-weight: 700; line-height: 1.1; margin-bottom: .9rem;
+  color: var(--zi-era-color, #4e79a7); }
+#zoom-info .zi-era:empty { display: none; }
+#zoom-info.era .zi-era { margin-bottom: 0; }
+#zoom-info.era h3, #zoom-info.era .zi-year, #zoom-info.era .zi-desc { display: none; }
+#zoom-info h3, #zoom-info .zi-year, #zoom-info .zi-desc { transition: opacity .5s ease; }
+#zoom-info.rest-hidden h3, #zoom-info.rest-hidden .zi-year, #zoom-info.rest-hidden .zi-desc { opacity: 0; }
+
+/* Texto flotante (pasos con .card[data-float]): centrado en el espacio vacío
+   que deja el gráfico al subir. La tarjeta original no se ve en la zona de texto. */
+.steps .card[data-float] { visibility: hidden; }
+#float-note {
+  position: fixed;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+#float-note.on { opacity: 1; }
+#zoom-info h3 { font-size: 2rem; font-weight: 700; line-height: 1.1; }
+#zoom-info .zi-year { font-size: 1.25rem; color: var(--muted); margin: .2rem 0 1rem; }
+#zoom-info .zi-desc { font-size: 1rem; line-height: 1.45; }
+@media (max-width: 700px) {
+  #zoom-info h3 { font-size: 1.4rem; }
+  #zoom-info .zi-desc { font-size: .9rem; }
+}
+
+/* ---------- Primera y última ganadora: pantalla dividida ----------
+   Dos mitades iguales sin línea visible: a la izquierda la línea de tiempo y
+   el texto, a la derecha el póster. Entre una película y otra: la línea de
+   tiempo se desliza en horizontal (--slide-ms), el texto cambia en su lugar
+   con un fundido y los pósters cambian en vertical. */
+#split {
+  --tl-y: 34vh;          /* altura de la línea de tiempo (años) */
+  --text-y: calc(34vh + 115px);   /* donde empieza el texto, debajo de la línea */
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .8s ease;
+  color: #fff;
+}
+#split.on { opacity: 1; }
+/* Sin animación (al entrar al paso o al cambiar el tamaño de la ventana) */
+#split.instant, #split.instant * { transition: none !important; }
+
+/* Textos: uno encima del otro, en el mismo lugar; solo el actual se ve */
+#split .split-text {
+  position: absolute; left: 0; width: 50vw; top: var(--text-y);
+  padding: 0 clamp(16px, 6vw, 96px);
+  text-align: center;
+  opacity: 0;
+  transition: opacity .6s ease;          /* el que se va: rápido */
+}
+#split .split-text.cur { opacity: 1; transition: opacity .8s ease .6s; }   /* el nuevo: cuando el otro ya se fue */
+#split .split-label {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  color: #f2c230;   /* amarillo ganador (WIN_COLOR) */
+  font-size: clamp(1.4rem, 2.6vw, 2.4rem);
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+#split .split-text h3 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
+  line-height: 1.1;
+  margin-bottom: .7rem;
+}
+#split .split-desc {
+  max-width: 420px; margin: 0 auto;
+  font-size: clamp(.85rem, 1.1vw, 1rem); line-height: 1.45; color: #d6d8dd;
+  text-wrap: pretty;
+}
+/* Pósters: el actual en el centro; los anteriores se van hacia arriba y los
+   siguientes esperan abajo (aparecen subiendo) */
+#split .split-poster {
+  position: absolute; left: 50vw; width: 50vw; top: 0; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: transform 1.3s cubic-bezier(.65, 0, .35, 1), opacity 1s ease;
+}
+#split .split-poster.cur    { opacity: 1; transform: none; }
+#split .split-poster.before { transform: translateY(-45vh); }
+#split .split-poster.after  { transform: translateY(45vh); }
+#split .split-poster img {
+  max-height: 72vh; max-width: 38vw;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .55);
+}
+
+/* Línea de tiempo: mitad izquierda, difuminada hacia los bordes */
+#split .split-tl {
+  position: absolute; left: 0; width: 50vw; top: var(--tl-y); height: 130px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 30%, #000 70%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 30%, #000 70%, transparent 100%);
+}
+#split .split-tl-track {
+  position: absolute; left: 0; top: 0; height: 100%;
+  transition: transform var(--slide-ms, 1800ms) cubic-bezier(.65, 0, .35, 1);
+}
+#split .split-tl-year {
+  position: absolute; top: 0;
+  transform: translateX(-50%);
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1;
+  color: #4d5260;   /* años vecinos: tenues */
+  transition: color .6s ease;
+  white-space: nowrap;
+}
+#split .split-tl-year.cur { color: #fff; }
+/* Línea de la primera a la última película, y el punto fijo en el año actual */
+#split .split-tl-line {
+  position: absolute; top: 76px; height: 2px;
+  background: #8b8f98;
+}
+/* La omisión de años: tramo punteado */
+#split .split-tl-line.gap {
+  background: repeating-linear-gradient(to right, #8b8f98 0 6px, transparent 6px 16px);
+}
+#split .split-tl-dot {
+  position: absolute; left: 25vw; top: 77px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 700px) {
+  #split .split-tl-year { font-size: 1.8rem; }
+  #split .split-tl-line { top: 48px; }
+  #split .split-tl-dot { top: 49px; }
+  #split { --text-y: calc(34vh + 100px); }
+}
+
+/* Títulos en mayúsculas */
+.card h1, .card h2, .card h3,
+#zoom-info h3, #zoom-info .zi-era,
+#zoom-title h2, .trio-title h3,
+#split .split-label, #split .split-text h3 {
+  text-transform: uppercase;
+}
+
+/* Textos flotantes (un solo texto en el centro): título grande, de impacto,
+   y debajo un subtítulo pequeño en regular */
+#float-note { max-width: none; }
+#float-note h1, #float-note h2 {
+  font-size: clamp(2.4rem, 5.6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 1.2rem;
+  text-wrap: balance;
+}
+#float-note p {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ---------- Romance: corazón de puntos que se parte ----------
+   Centrado entre la fila del romance y el texto (top y tamaño: script.js).
+   Aparece (.on) y después se parte (.broken): cada mitad gira hacia afuera
+   desde la punta de abajo. */
+#heart {
+  position: fixed;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%) scale(.92);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .7s ease, transform .7s ease;
+}
+#heart.on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+#heart svg { width: 100%; height: 100%; overflow: visible; }
+#heart circle { fill: #e15759; }   /* color del romance (GENRE_COLORS.Romance) */
+#heart .heart-half {
+  transform-box: view-box;
+  transform-origin: 125px 240px;   /* la punta de abajo del corazón */
+  transition: transform 1.1s cubic-bezier(.3, 1.4, .5, 1);
+}
+#heart.broken .heart-half.left  { transform: translateX(-7px) rotate(-9deg); }
+#heart.broken .heart-half.right { transform: translateX(7px) rotate(9deg); }
+
+/* Título del paso del romance, en su color; las cifras resaltadas */
+.card h1.title-romance, #float-note h1.title-romance { color: #e15759; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.05; }
+#float-note h1.title-romance + p { color: var(--text); font-size: clamp(1rem, 1.5vw, 1.3rem); }
+.card [data-stat] { color: #fff; font-weight: 700; }
+
+/* ---------- Drama: máscara de teatro de puntos ----------
+   Mismo lugar y tamaño que el corazón del romance. Aparece y flota despacio. */
+#mask-icon {
+  position: fixed;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%) scale(.92);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .7s ease, transform .7s ease;
+}
+#mask-icon.on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+#mask-icon svg { width: 100%; height: 100%; overflow: visible; }
+#mask-icon g { transform-box: view-box; transform-origin: 50% 50%; }
+/* Máscara: flota despacio. Estrella: brilla (late y gira apenas) */
+#mask-icon.on[data-kind="mask"] g { animation: mask-float 5s ease-in-out infinite; }
+#mask-icon.on[data-kind="star"] g { animation: star-shine 3.2s ease-in-out infinite; }
+@keyframes star-shine {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50%      { transform: scale(1.08) rotate(8deg); opacity: .8; }
+}
+@keyframes mask-float {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%      { transform: translateY(-14px) rotate(3deg); }
+}
+.card h1.title-drama, #float-note h1.title-drama { color: #4e79a7; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.05; }
+#float-note h1.title-drama + p { color: var(--text); font-size: clamp(1rem, 1.5vw, 1.3rem); }
+.card h1.title-biopic, #float-note h1.title-biopic { color: #f28e2b; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.05; }
+#float-note h1.title-biopic + p { color: var(--text); font-size: clamp(1rem, 1.5vw, 1.3rem); }
+
+/* Video de fondo de la pantalla dividida (bgVideo, p. ej. Wings): ocupa toda la
+   mitad derecha, con el borde izquierdo difuminado hacia el fondo. El póster va
+   encima y se desvanece después de un rato (.faded). */
+#split .split-bgvideo {
+  /* Ocupa la mitad derecha y se pasa unas columnas del centro (--bg-left, --bg-w: script.js) */
+  position: absolute; left: var(--bg-left, 50vw); top: 0; width: var(--bg-w, 50vw); height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  /* Todo el video visto a través de la grilla de puntos de la portada; en las
+     columnas que se pasan del centro, los puntos pierden opacidad de a una
+     columna (--bg-dots: splitDotsMask en script.js) */
+  -webkit-mask-image: var(--bg-dots);
+          mask-image: var(--bg-dots);
+  -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+/* Visible si es la película actual y ya lleva un rato reproduciéndose (sin la interfaz de YouTube) */
+#split .split-bgvideo.cur.playing { opacity: 1; }
+#split .split-bgvideo iframe { position: absolute; border: 0; pointer-events: none; }
+#split .split-poster.cur.faded { opacity: 0; transition: opacity 1.4s ease; }
+
+/* ---------- Video a media pantalla (el sobre equivocado de Moonlight) ----------
+   Crece desde el círculo del zoom hasta salirse de la pantalla por la
+   izquierda; el texto va a la derecha, como en la pantalla dividida. */
+#big-circle {
+  position: fixed; inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .5s ease;
+  color: #fff;
+}
+#big-circle.on { opacity: 1; }
+/* Video a la izquierda con el tratamiento de Wings y One Battle: grilla de
+   puntos de la portada y, pasado el centro, columnas que pierden opacidad
+   (--bc-dots, left y width: sizeBig en script.js) */
+#big-circle .bc-video {
+  position: absolute; top: 0; height: 100%;
+  overflow: hidden;
+  -webkit-mask-image: var(--bc-dots);
+          mask-image: var(--bc-dots);
+  -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+#big-circle .bc-video iframe {
+  position: absolute;
+  border: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+/* El video se ve cuando ya lleva un rato reproduciéndose (sin la interfaz de YouTube) */
+#big-circle.playing .bc-video iframe { opacity: 1; }
+#big-circle .bc-text {
+  position: absolute; left: 50vw; width: 50vw; top: 50%;
+  transform: translateY(-50%);
+  padding: 0 clamp(16px, 6vw, 96px) 0 clamp(16px, 8vw, 140px);
+  text-align: center;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+#big-circle.text-on .bc-text { opacity: 1; }
+#big-circle .split-label {
+  font-weight: 600; text-transform: uppercase;
+  color: #ff9b9b;   /* rojo claro (el sobre equivocado) */
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  margin-bottom: 1rem;
+}
+#big-circle h3 {
+  font-weight: 700; text-transform: uppercase;
+  font-size: clamp(2.4rem, 5.6vw, 5rem);   /* mismo tamaño que los títulos flotantes (¿Por qué gana la guerra?) */
+  line-height: 1.05;
+  text-wrap: balance;
+  margin-bottom: 1rem;
+}
+#big-circle .split-desc {
+  max-width: 460px; margin: 0 auto;
+  font-size: clamp(.9rem, 1.2vw, 1.05rem); line-height: 1.5; color: #d6d8dd;
+  text-wrap: pretty;
+}
+
+/* ---------- Texto arriba de la grilla (headNote) ----------
+   Cifra grande y, a su lado, el título en mayúsculas en varias líneas.
+   Apoyado sobre la primera fila de puntos y alineado a su borde izquierdo. */
+#head-note {
+  position: fixed;
+  z-index: 5;
+  transform: translateY(-100%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 40px);
+  color: #fff;
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+#head-note.on { opacity: 1; }
+#head-note .big-num {
+  font-size: clamp(4.5rem, 10vw, 8.5rem);
+  font-weight: 700;
+  line-height: .8;
+  letter-spacing: -.03em;
+}
+#head-note h1 {
+  font-size: clamp(1rem, 1.6vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  max-width: 11ch;
+}
+/* Ganadoras: cifra y título en amarillo ganador (la cifra cambia de color al contar) */
+#head-note .big-num, #head-note h1 { transition: color .8s ease, opacity .35s ease; }
+#head-note .win { color: #f2c230; }
+
+/* ---------- Textos a los costados de la estatuilla (sideNote) ----------
+   Izquierda: la pregunta grande en amarillo ganador (termina antes de la
+   estatuilla). Derecha: la bajada en blanco. Los dos apoyados en su base. */
+#side-note { position: fixed; inset: 0; z-index: 5; pointer-events: none; opacity: 0; transition: opacity .8s ease; }
+#side-note.on { opacity: 1; }
+#side-note .sn-left, #side-note .sn-right {
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-wrap: balance;
+}
+#side-note .sn-left {
+  transform: translate(-100%, -100%);
+  color: #f2c230;
+  font-size: clamp(2.6rem, 5.6vw, 6.5rem);
+  line-height: .95;
+  width: max-content;
+  max-width: 46vw;
+}
+#side-note .sn-right {
+  transform: translateY(-100%);
+  color: #fff;
+  font-size: clamp(1rem, 1.7vw, 1.75rem);
+  line-height: 1.05;
+  max-width: 16ch;
+}
+
+/* ---------- Texto debajo de los bloques (footNote) ----------
+   Como el texto de arriba de la grilla (cifra grande + texto al lado), pero
+   debajo de los bloques y centrado en el ancho de la pantalla. */
+#foot-note {
+  position: fixed;
+  z-index: 5;
+  transform: translateX(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3.5vw, 64px);
+  color: #fff;
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+#foot-note.on { opacity: 1; }
+#foot-note .big-num {
+  font-size: clamp(4.5rem, 10vw, 9rem);
+  font-weight: 700;
+  line-height: .8;
+  letter-spacing: -.03em;
+  white-space: nowrap;
+}
+#foot-note h1 {
+  font-size: clamp(1.1rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  width: 19ch;
+}
+#foot-note .big-num { transition: color .8s ease; }
+#foot-note .win { color: #f2c230; }   /* cifras de ganadoras: amarillo ganador */
+
+/* ---------- Género solo: título | ícono | descripción (soloNote) ----------
+   Título a la izquierda del ícono (tamaño de los títulos flotantes, en el
+   color del género) y la descripción a la derecha (tamaño del texto de las
+   cifras grandes, en regular). Los dos centrados en la altura del ícono. */
+#solo-note { position: fixed; inset: 0; z-index: 5; pointer-events: none; opacity: 0; transition: opacity .45s ease; }
+#solo-note.on { opacity: 1; transition: opacity .8s ease; }
+#solo-note .sl-left, #solo-note .sl-right { position: absolute; }
+#solo-note .sl-left {
+  transform: translate(-100%, -50%);
+  font-size: clamp(1.8rem, 3.4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  text-align: left;
+  max-width: 34vw;   /* el ancho final lo ajusta script.js (shrinkWrap) */
+  text-wrap: balance;   /* título en líneas parejas */
+}
+#solo-note .sl-right {
+  transform: translateY(-50%);
+  font-size: clamp(1rem, 1.35vw, 1.3rem);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--text);
+  max-width: 24ch;   /* párrafo angosto: varias líneas cortas */
+  text-wrap: wrap;   /* corte normal: cada línea se llena hasta donde entra */
+}
+#solo-note .sl-right [data-stat] { font-weight: 700; color: #fff; }
+#solo-note .title-romance { color: #e15759; }
+#solo-note .title-biopic  { color: #f28e2b; }
+#solo-note .title-drama   { color: #4e79a7; }
+/* Unidad junto a la cifra grande (p. ej. "110 MIN"): chica, en mayúsculas, apoyada en la base */
+#head-note .big-num small, #foot-note .big-num small {
+  font-size: .28em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin-left: .25em;
+}
+#head-note h1.wide { max-width: 20ch; }   /* caja de texto más ancha (p. ej. la franja más común) */
+/* La franja más común: el texto alineado abajo con la cifra ("110") */
+#head-note:has(h1.wide) { align-items: flex-end; }
+#head-note h1.wide { margin-bottom: -.12em; }   /* compensa el aire bajo las letras: la última línea apoya en la base de la cifra */
+/* Video a la derecha (side: 'right', p. ej. Hattie McDaniel): el texto va en la mitad izquierda */
+#big-circle[data-side="right"] .bc-text {
+  left: 0;
+  padding: 0 clamp(16px, 8vw, 140px) 0 clamp(16px, 6vw, 96px);
+}
+
+/* Leyenda en la sección de género: en columna, arriba a la izquierda */
+#legend.side {
+  left: 5vw; right: auto;
+  top: calc(var(--chart-top) - 80px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 15px;
+}
+#legend.side i { width: 12px; height: 12px; }
+
+/* footNote 'overlap' (el porcentaje del drama): la cifra se superpone a las
+   últimas filas de puntos; debajo, la palabra enorme; a la derecha, el texto
+   apoyado en la base de la palabra. Todo en el azul del drama salvo el texto. */
+#foot-note.overlap {
+  transform: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas: "num ." "word text";
+  align-items: end;
+  column-gap: 6vw;
+  row-gap: .6rem;
+}
+#foot-note.overlap .big-num  { grid-area: num; color: #4e79a7; font-size: clamp(4.5rem, 8vw, 8rem); }
+#foot-note.overlap .big-word {
+  grid-area: word;
+  color: #4e79a7;
+  font-size: clamp(5rem, 11vw, 11rem);
+  font-weight: 700;
+  line-height: .8;
+  text-transform: uppercase;
+  letter-spacing: -.02em;
+}
+#foot-note.overlap h1 { grid-area: text; width: auto; max-width: 26ch; font-size: clamp(1.1rem, 1.9vw, 1.9rem); }
+#foot-note .big-word { display: none; }   /* solo en la composición 'overlap' */
+#foot-note.overlap .big-word { display: block; }
+#foot-note h1.drama { color: #4e79a7; }   /* título del porcentaje del drama, en azul drama */
+/* Productora: cifra y título de MGM en su color (MGM_COLOR en script.js) */
+#head-note .mgm { color: #9ecbff; }
+
+/* ---------- Tira de pósters (Columbia) ----------
+   A lo ancho de la pantalla, centrada en --top (script.js). Los pósters pasan
+   solos de derecha a izquierda en loop (la lista va dos veces: la animación
+   corre la mitad de la tira y vuelve a empezar sin salto). */
+#poster-strip {
+  position: fixed; left: 0; right: 0;
+  z-index: 3;
+  transform: translateY(-50%);
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .9s ease;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+}
+#poster-strip.on { opacity: 1; }
+#poster-strip .ps-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  padding-right: 24px;   /* el mismo espacio entre la última y la primera de la copia */
+  animation: ps-scroll var(--ps-dur, 40s) linear infinite;
+}
+#poster-strip img {
+  height: var(--ph, 260px);
+  width: auto;
+  display: block;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .5);
+}
+@keyframes ps-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+/* Texto flotante a 66 px (p. ej. Columbia, arriba de los pósters): mayúsculas, blanco */
+#float-note h1.size66 { font-size: min(33px, 3.5vw); line-height: 1.05; color: #fff; text-transform: uppercase; margin-bottom: 0; }
+/* La tira se detiene y vuelve a un póster (focus): sin animación automática;
+   los demás pósters se apagan */
+#poster-strip .ps-track.focused { animation: none; }
+#poster-strip img { transition: opacity .6s ease; }
+#poster-strip .ps-track.focused img:not(.target) { opacity: .2; }
+
+/* ---------- Cierre: la fórmula ganadora ----------
+   Las tres líneas (género, duración, estudio) a la izquierda, grandes y en
+   amarillo ganador, centradas en la altura de la estatuilla (top: script.js). */
+#formula-note {
+  position: fixed; left: 9vw;
+  z-index: 5;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .8s ease;
+  color: #f2c230;
+}
+#formula-note.on { opacity: 1; }
+#formula-note .fx {
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-weight: 700;
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+}
+#formula-note .fx small { font-size: .38em; margin-left: .3em; font-weight: 700; }
+
+/* Cuenta regresiva: grande y en amarillo, centrada en la pantalla */
+#countdown {
+  position: fixed; left: 50%; top: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  text-align: center;
+  color: #f2c230;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+#countdown.on { opacity: 1; }
+#countdown .cd-label { color: var(--text); font-size: clamp(1rem, 1.8vw, 1.6rem); font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; }
+#countdown .cd-clock { display: flex; align-items: flex-start; justify-content: center; gap: clamp(8px, 1.5vw, 24px); }
+#countdown .cd-part { display: flex; flex-direction: column; align-items: center; }
+#countdown .cd-num { font-size: clamp(3.5rem, 10vw, 10rem); font-weight: 700; line-height: .9; font-variant-numeric: tabular-nums; }
+#countdown .cd-unit { font-size: clamp(.8rem, 1.2vw, 1.1rem); font-weight: 600; text-transform: uppercase; color: var(--muted); margin-top: .6rem; }
+#countdown .cd-sep { font-size: clamp(3rem, 8vw, 8rem); font-weight: 700; line-height: .9; opacity: .5; }
+#countdown .cd-when { color: var(--muted); font-size: clamp(.9rem, 1.3vw, 1.2rem); margin-top: 1.5rem; }
+
+/* Video final: a pantalla completa, en blanco y negro, visto a través de la
+   grilla de puntos de la portada (--cell, --mr, --oy: script.js). dim: más
+   oscuro para leer las fuentes y los créditos. */
+#outro-video {
+  position: fixed; inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease;
+  -webkit-mask-image: radial-gradient(circle at center, #000 var(--mr, 4.5px), transparent calc(var(--mr, 4.5px) + 1px));
+          mask-image: radial-gradient(circle at center, #000 var(--mr, 4.5px), transparent calc(var(--mr, 4.5px) + 1px));
+  -webkit-mask-size: var(--cell, 12px) var(--cell, 12px);
+          mask-size: var(--cell, 12px) var(--cell, 12px);
+  -webkit-mask-position: 0 var(--oy, 0px);
+          mask-position: 0 var(--oy, 0px);
+}
+#outro-video.on.playing { opacity: 1; }
+#outro-video.on.playing.dim { opacity: .3; }
+#outro-video iframe { position: absolute; border: 0; filter: grayscale(1); }
+
+/* Fuentes y créditos */
+.card.credits h2 { margin-top: 1.2rem; }
+.card.credits h2:first-child { margin-top: 0; }
